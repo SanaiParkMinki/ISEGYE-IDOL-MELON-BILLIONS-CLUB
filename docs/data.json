@@ -1,0 +1,315 @@
+{
+ "generated_at": "2026-11-25T17:02:09+09:00",
+ "confirmed_date": null,
+ "only_pending": true,
+ "pending_taken_at": "2026-11-25T17:02:09+09:00",
+ "groups": [
+  {
+   "name": "이세계아이돌",
+   "total": 635790026,
+   "delta": null,
+   "prev_date": null,
+   "series": [],
+   "songs": [
+    {
+     "title": "KIDDING",
+     "count": 79488655,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36710003"
+    },
+    {
+     "title": "RE : WIND",
+     "count": 64248519,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=34421197"
+    },
+    {
+     "title": "LOCKDOWN",
+     "count": 52208571,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36549241"
+    },
+    {
+     "title": "겨울봄",
+     "count": 50516129,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=34748940"
+    },
+    {
+     "title": "OVER",
+     "count": 43255464,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36820644"
+    },
+    {
+     "title": "Superhero",
+     "count": 42775689,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36820645"
+    },
+    {
+     "title": "Another World",
+     "count": 42396251,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36634860"
+    },
+    {
+     "title": "Be My Light",
+     "count": 23688149,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406667"
+    },
+    {
+     "title": "Nameless",
+     "count": 21478877,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406668"
+    },
+    {
+     "title": "Misty Rainbow",
+     "count": 19421676,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38852970"
+    },
+    {
+     "title": "화이트 (White)",
+     "count": 17907315,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600740747"
+    },
+    {
+     "title": "Stargazers [Stargazers]",
+     "count": 17728335,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958780"
+    },
+    {
+     "title": "MEMORY [Stargazers]",
+     "count": 13754744,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958782"
+    },
+    {
+     "title": "ELEVATE [Stargazers]",
+     "count": 13753025,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958781"
+    },
+    {
+     "title": "SYZYGY",
+     "count": 13560934,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38684087"
+    },
+    {
+     "title": "Smile For You",
+     "count": 13415026,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=602294070"
+    },
+    {
+     "title": "Stargazers [Be My Light]",
+     "count": 10536685,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406669"
+    },
+    {
+     "title": "LOCKDOWN (Inst.)",
+     "count": 9913591,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36549242"
+    },
+    {
+     "title": "Another World (Inst.)",
+     "count": 8808227,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36634861"
+    },
+    {
+     "title": "ELEVATE [Be My Light]",
+     "count": 8617971,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406670"
+    },
+    {
+     "title": "RE : WIND (Inst.)",
+     "count": 8400262,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=34421198"
+    },
+    {
+     "title": "MEMORY [Be My Light]",
+     "count": 8143241,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406671"
+    },
+    {
+     "title": "겨울봄 (Inst.)",
+     "count": 7554241,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=34748941"
+    },
+    {
+     "title": "REBELS",
+     "count": 7063268,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603813508"
+    },
+    {
+     "title": "KIDDING (Inst.)",
+     "count": 6201880,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36710004"
+    },
+    {
+     "title": "OVER (inst.)",
+     "count": 5112808,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36820646"
+    },
+    {
+     "title": "Superhero (inst.)",
+     "count": 5067870,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=36820647"
+    },
+    {
+     "title": "연애세포 (恋愛細胞)",
+     "count": 4922420,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603813507"
+    },
+    {
+     "title": "BACK 2 THE FUTURE",
+     "count": 3741380,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603813509"
+    },
+    {
+     "title": "ANTI-HERO",
+     "count": 3715427,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603813510"
+    },
+    {
+     "title": "Dream Residue",
+     "count": 2704016,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603813511"
+    },
+    {
+     "title": "SYZYGY (Inst.)",
+     "count": 1866254,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38684088"
+    },
+    {
+     "title": "Misty Rainbow (Inst.)",
+     "count": 1383870,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38852971"
+    },
+    {
+     "title": "Stargazers (Inst.)",
+     "count": 733591,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958783"
+    },
+    {
+     "title": "ELEVATE (Inst.)",
+     "count": 720405,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958784"
+    },
+    {
+     "title": "MEMORY (Inst.)",
+     "count": 717912,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=38958785"
+    },
+    {
+     "title": "Be My Light (Inst.)",
+     "count": 134198,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406672"
+    },
+    {
+     "title": "Nameless (Inst.)",
+     "count": 133150,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=600406673"
+    }
+   ],
+   "pending": null
+  },
+  {
+   "name": "고세구 《NO CAT, NO LIFE!》",
+   "total": 12597514,
+   "delta": null,
+   "prev_date": null,
+   "series": [],
+   "songs": [
+    {
+     "title": "고양이가 세상을 구한다!",
+     "count": 5126990,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603093102"
+    },
+    {
+     "title": "PUMP JUMP BUMP",
+     "count": 3735413,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603093104"
+    },
+    {
+     "title": "Your Turn",
+     "count": 3735111,
+     "delta": null,
+     "carried": false,
+     "link": "https://www.melon.com/song/detail.htm?songId=603093103"
+    }
+   ],
+   "pending": null
+  }
+ ]
+}
