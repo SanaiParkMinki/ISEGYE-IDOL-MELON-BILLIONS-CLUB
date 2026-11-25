@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-25T19:07:46+09:00",
+ "generated_at": "2026-11-25T19:24:49+09:00",
  "confirmed_date": "2026-11-25",
- "basis_at": "2026-11-25T19:07:46+09:00",
+ "basis_at": "2026-11-25T19:24:49+09:00",
  "site_url": "https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/",
  "events": [],
  "releases": [
@@ -88,7 +88,7 @@
    "series": [
     {
      "date": "2026-11-25",
-     "at": "2026-11-25T19:07:46+09:00",
+     "at": "2026-11-25T19:24:49+09:00",
      "total": 635790026
     }
    ],
@@ -100,6 +100,7 @@
     "prev_month": null,
     "prev_month_label": "10월"
    },
+   "weekly": null,
    "goal": {
     "label": "멜론 빌리언스 클럽",
     "target": 1000000000,
@@ -1042,7 +1043,7 @@
    "series": [
     {
      "date": "2026-11-25",
-     "at": "2026-11-25T19:07:46+09:00",
+     "at": "2026-11-25T19:24:49+09:00",
      "total": 12597514
     }
    ],
@@ -1054,6 +1055,7 @@
     "prev_month": null,
     "prev_month_label": "10월"
    },
+   "weekly": null,
    "goal": null,
    "albums": [
     {
