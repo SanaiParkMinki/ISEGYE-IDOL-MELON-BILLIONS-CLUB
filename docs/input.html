@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>숫자 입력 도우미 · 이세계아이돌 멜론 누적 스트리밍</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    color-scheme: light;
+    --card: rgba(255, 255, 255, 0.86); --card-border: rgba(255, 255, 255, 0.95);
+    --surface-0: #f5f3fb; --surface-1: #ffffff; --border: #e4e2ec; --grid: #ececf1;
+    --ink: #26233f; --ink-soft: #4b4766;
+    --text-primary: #191919; --text-secondary: #666666;
+    --ok: #008a17; --warn: #a86b00; --bad: #d03b3b; --accent: #257de0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --card: rgba(22, 22, 30, 0.88); --card-border: rgba(255, 255, 255, 0.14);
+      --surface-0: #111116; --surface-1: #191920; --border: #2c2c34; --grid: #26262e;
+      --text-primary: #efefef; --text-secondary: #9c9c9c;
+      --ok: #0aac23; --warn: #e0a43a; --bad: #eb6263; --accent: #338ced;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f4f1ff; color: var(--text-primary); line-height: 1.5; word-break: keep-all;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; }
+  body::before { content: ""; position: fixed; inset: -12%; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(ellipse 42% 36% at 50% 30%, #ffffff 0%, rgba(255,255,255,.9) 28%, rgba(255,255,255,0) 72%),
+      radial-gradient(circle at 50% 0%, #52d1f9 0%, transparent 42%), radial-gradient(circle at 4% 4%, #c4f3ec 0%, transparent 42%),
+      radial-gradient(circle at 96% 4%, #aab4ed 0%, transparent 42%), radial-gradient(circle at 0% 46%, #e2f9ad 0%, transparent 38%),
+      radial-gradient(circle at 100% 46%, #e5c2ec 0%, transparent 38%), radial-gradient(circle at 0% 100%, #fac0a9 0%, transparent 46%),
+      radial-gradient(circle at 52% 100%, #f986bd 0%, transparent 42%), radial-gradient(circle at 100% 100%, #9e7fcb 0%, transparent 46%), #f4f1ff;
+    filter: blur(28px) saturate(1.15); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 28px 16px 140px; }
+  header a { color: var(--ink-soft); font-size: 14px; font-weight: 600; text-decoration: none; }
+  h1 { font-size: 24px; margin: 6px 0 4px; color: var(--ink); text-shadow: 0 1px 12px rgba(255,255,255,.9); }
+  .card { margin-top: 18px; background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 18px;
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: 0 10px 40px rgba(110, 90, 170, 0.16); }
+  .steps { margin: 0; padding-left: 20px; font-size: 14px; }
+  .steps li + li { margin-top: 4px; }
+  .steps b { color: var(--accent); }
+  h2 { font-size: 16px; margin: 0 0 6px; }
+  .album { font-size: 12px; font-weight: 700; color: var(--text-secondary); margin: 16px 0 4px; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(130px, 1fr); gap: 4px 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--grid); }
+  .row .name { font-size: 14px; font-weight: 600; }
+  .row .name a { color: inherit; font-weight: 400; font-size: 12px; margin-left: 6px; color: var(--text-secondary); }
+  .row .prev { font-size: 12px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .row input { width: 100%; font: inherit; font-size: 16px; padding: 8px 10px; border-radius: 10px; text-align: right;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .row input:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+  .row .status { grid-column: 2; font-size: 12px; text-align: right; color: var(--text-secondary); min-height: 18px; }
+  .row.ok .status { color: var(--ok); }
+  .row.warn input { border-color: var(--warn); } .row.warn .status { color: var(--warn); }
+  .row.bad input { border-color: var(--bad); } .row.bad .status { color: var(--bad); font-weight: 600; }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: var(--card); border-top: 1px solid var(--card-border); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); z-index: 5; }
+  .bar-in { max-width: 860px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; justify-content: space-between; }
+  .count { font-size: 14px; }
+  .count .bad { color: var(--bad); font-weight: 600; } .count .warn { color: var(--warn); font-weight: 600; }
+  .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+  .btns button, .btns a { font: inherit; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; cursor: pointer; text-decoration: none;
+    border: 1px solid var(--border); background: transparent; color: var(--text-primary); }
+  .btns .primary { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
+  .toast { position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%); background: #26233f; color: #fff; padding: 10px 18px;
+    border-radius: 999px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 10; }
+  .toast.show { opacity: 1; }
+  details summary { cursor: pointer; font-size: 14px; color: var(--text-secondary); }
+  textarea { width: 100%; height: 220px; margin-top: 8px; font: 12px/1.5 ui-monospace, Consolas, monospace; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); padding: 10px; }
+  .muted { color: var(--text-secondary); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="./">← 사이트로 돌아가기</a>
+    <h1>✏️ 숫자 입력 도우미</h1>
+  </header>
+
+  <div class="card">
+    <ol class="steps">
+      <li>곡마다 <b>누적 감상 수</b>를 칸에 넣어요. 숫자 옆 <b>가이섬</b>을 누르면 그 곡 기록이 바로 열려요. 바뀌지 않은 곡은 비워 두면 돼요.</li>
+      <li>아래 <b>📋 복사</b>를 눌러요.</li>
+      <li><b>GitHub에서 열기</b>를 누르고, 편집 칸에서 <b>Ctrl+A → Ctrl+V</b> 한 다음 <b>Commit changes</b>를 누르면 끝! 1~2분 뒤 사이트에 반영돼요.</li>
+    </ol>
+    <p class="muted" id="base-note"></p>
+  </div>
+
+  <div id="groups"><div class="card muted">곡 목록을 불러오는 중…</div></div>
+
+  <div class="card">
+    <details>
+      <summary>만들어질 input.txt 내용 미리 보기</summary>
+      <textarea id="preview" readonly></textarea>
+    </details>
+  </div>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="count" id="count"></div>
+    <div class="btns">
+      <button type="button" id="reset">초기화</button>
+      <button type="button" class="primary" id="copy">📋 복사</button>
+      <a id="open-gh" target="_blank" rel="noopener">GitHub에서 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+(() => {
+  const fmt = n => n.toLocaleString("ko-KR");
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const todayKST = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const DRAFT = "input-draft-v1";
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+    del(k) { try { localStorage.removeItem(k); } catch (e) {} },
+  };
+  // '12,345,678회', '１２３' 같은 입력 → 숫자 (빈칸은 null, 이상하면 NaN)
+  const clean = t => {
+    t = (t || "").normalize("NFKC").replace(/[,\s회번+]/g, "");
+    if (!t) return null;
+    return /^\d+$/.test(t) ? parseInt(t, 10) : NaN;
+  };
+
+  const repo = location.pathname.split("/").filter(Boolean)[0];
+  const editUrl = location.hostname.endsWith("github.io") && repo
+    ? `https://github.com/${location.hostname.split(".")[0]}/${repo}/edit/main/data/input.txt` : null;
+  const openGh = document.getElementById("open-gh");
+  if (editUrl) openGh.href = editUrl; else openGh.style.display = "none";
+
+  let SONGS = [];   // [{group, title, album, released, link, base, count, avg, key, input}]
+  let sameDay = false;
+
+  fetch("data.json?t=" + Date.now()).then(r => r.json()).then(data => {
+    sameDay = data.confirmed_date === todayKST();
+    document.getElementById("base-note").textContent = sameDay
+      ? `오늘(${data.confirmed_date}) 이미 입력한 기록이 있어요. 비교는 그 전 기록 기준이고, 저장하면 오늘 기록이 새 숫자로 바뀌어요.`
+      : `마지막 기록: ${data.confirmed_date}. 그 숫자와 비교해서 오타를 찾아 드려요.`;
+    const saved = store.get(DRAFT);   // 오늘 입력하던 숫자만 되살림
+    const draft = saved && saved.day === todayKST() ? saved.v : {};
+    data.groups.forEach(g => {
+      [...g.songs].sort((a, b) => a.order - b.order).forEach(s => {
+        const key = g.name + "|" + s.title;
+        SONGS.push({
+          group: g.name, title: s.title, album: s.album, released: s.released, link: s.link, key,
+          count: s.count, base: sameDay ? (s.prev_count ?? s.count) : s.count, avg: s.avg_daily,
+          songId: (s.link || "").match(/songId=(\d+)/)?.[1], input: draft[key] || "",
+        });
+      });
+    });
+    build();
+  }).catch(() => {
+    document.getElementById("groups").innerHTML = `<div class="card">곡 목록을 불러오지 못했어요. 사이트에 기록이 한 번 이상 있어야 도우미를 쓸 수 있어요.</div>`;
+  });
+
+  function build() {
+    const root = document.getElementById("groups");
+    let html = "", lastGroup = null, lastAlbum = null;
+    SONGS.forEach((s, i) => {
+      if (s.group !== lastGroup) {
+        if (lastGroup !== null) html += `</div>`;
+        html += `<div class="card"><h2>${esc(s.group)}</h2>`;
+        lastGroup = s.group; lastAlbum = null;
+      }
+      if (s.album !== lastAlbum) {
+        html += `<div class="album">💿 ${esc(s.album || "기타")}${s.released ? " · " + s.released : ""}</div>`;
+        lastAlbum = s.album;
+      }
+      const gs = s.songId ? `<a href="https://xn--o39an51b2re.com/chart/melon/streaming-card/trend/ranking/${s.songId}" target="_blank" rel="noopener">가이섬 ↗</a>` : "";
+      html += `<div class="row" data-i="${i}">
+        <div><div class="name">${esc(s.title)}${gs}</div>
+          <div class="prev">이전 ${s.base !== null && s.base !== undefined ? fmt(s.base) : "기록 없음"}</div></div>
+        <input type="text" inputmode="numeric" autocomplete="off" placeholder="비우면 이전 숫자" value="${esc(s.input)}" aria-label="${esc(s.title)} 누적 감상 수">
+        <div class="status"></div>
+      </div>`;
+    });
+    root.innerHTML = html + `</div>`;
+    root.querySelectorAll(".row").forEach(row => {
+      const s = SONGS[+row.dataset.i], inp = row.querySelector("input");
+      inp.addEventListener("input", () => { s.input = inp.value; check(row, s); update(); });
+      inp.addEventListener("blur", () => { const v = clean(inp.value); if (v !== null && !isNaN(v)) { inp.value = fmt(v); s.input = inp.value; update(); } });
+      inp.addEventListener("keydown", e => {   // Enter 누르면 다음 칸으로
+        if (e.key !== "Enter") return;
+        e.preventDefault();
+        const inputs = [...root.querySelectorAll("input")];
+        const next = inputs[inputs.indexOf(inp) + 1];
+        if (next) next.focus(); else document.getElementById("copy").focus();
+      });
+      check(row, s);
+    });
+    update();
+  }
+
+  function check(row, s) {
+    const st = row.querySelector(".status");
+    row.className = "row";
+    s.state = "empty";
+    const v = clean(s.input);
+    if (v === null) { st.textContent = s.count !== undefined ? `비우면 ${fmt(s.count)} 그대로` : ""; return; }
+    if (isNaN(v)) { row.classList.add("bad"); s.state = "bad"; st.textContent = "숫자만 넣어 주세요"; return; }
+    s.state = "ok";
+    if (s.base === null || s.base === undefined) { row.classList.add("ok"); st.textContent = "새 곡"; return; }
+    const inc = v - s.base;
+    if (inc < 0) { row.classList.add("bad"); s.state = "bad"; st.textContent = `이전보다 ${fmt(-inc)} 줄었어요 · 저장하면 기록이 멈춰요`; return; }
+    if (inc === 0) { st.textContent = "변화 없음"; return; }
+    const big = (s.base && inc / s.base > 0.05) || (s.avg && inc > s.avg * 5 && inc > 1000);
+    if (big) { row.classList.add("warn"); s.state = "warn"; st.textContent = `+${fmt(inc)} · 평소보다 많이 늘었어요, 확인해 주세요`; return; }
+    row.classList.add("ok"); st.textContent = `+${fmt(inc)}`;
+  }
+
+  function makeText() {
+    const lines = [
+      "# 이세계아이돌 멜론 누적 스트리밍 입력 파일 (입력 도우미로 만든 내용)",
+      "# 형식: 그룹 | 곡 제목 | 누적 스트리밍 수   · 숫자를 비워두면 이전 숫자를 그대로 써요",
+      "# 사이트의 '✏️ 숫자 입력 도우미'에서 만들면 편해요.",
+    ];
+    let lastGroup = null, lastAlbum = null;
+    SONGS.forEach(s => {
+      if (s.group !== lastGroup || s.album !== lastAlbum) {
+        lines.push("", `# ── ${s.album || "기타"}${s.released ? ` (${s.released})` : ""}`);
+        lastGroup = s.group; lastAlbum = s.album;
+      }
+      const v = clean(s.input);
+      lines.push(`${s.group} | ${s.title} |${v !== null && !isNaN(v) ? " " + fmt(v) : ""}`);
+    });
+    return lines.join("\n") + "\n";
+  }
+
+  function update() {
+    const filled = SONGS.filter(s => s.state && s.state !== "empty").length;
+    const bad = SONGS.filter(s => s.state === "bad").length, warn = SONGS.filter(s => s.state === "warn").length;
+    document.getElementById("count").innerHTML = `${SONGS.length}곡 중 <b>${filled}곡</b> 입력`
+      + (bad ? ` · <span class="bad">고칠 곳 ${bad}개</span>` : "") + (warn ? ` · <span class="warn">확인 ${warn}개</span>` : "");
+    document.getElementById("preview").value = makeText();
+    const draft = {}; SONGS.forEach(s => { if (s.input) draft[s.key] = s.input; });
+    store.set(DRAFT, { day: todayKST(), v: draft });
+  }
+
+  const toast = msg => { const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
+
+  document.getElementById("copy").addEventListener("click", async () => {
+    const text = makeText();
+    const bad = SONGS.filter(s => s.state === "bad").length;
+    try { await navigator.clipboard.writeText(text); }
+    catch (e) {   // 복사가 막힌 브라우저: 미리보기 칸을 선택해서 복사
+      const ta = document.getElementById("preview"); ta.closest("details").open = true; ta.select(); document.execCommand("copy");
+    }
+    toast(bad ? `복사했어요. 다만 고칠 곳이 ${bad}개 있어요!` : "복사했어요! 이제 GitHub에서 붙여넣기만 하면 돼요");
+  });
+  document.getElementById("reset").addEventListener("click", () => {
+    SONGS.forEach(s => s.input = ""); store.del(DRAFT); build(); toast("입력한 숫자를 모두 지웠어요");
+  });
+})();
+</script>
+</body>
+</html>
