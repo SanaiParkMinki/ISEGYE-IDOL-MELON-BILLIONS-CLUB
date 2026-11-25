@@ -37,7 +37,7 @@
   body {
     margin: 0; background: var(--surface-0); color: var(--text-primary);
     font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-    line-height: 1.5;
+    line-height: 1.5; word-break: keep-all;
   }
   .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
   header h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.02em; }
@@ -58,6 +58,21 @@
   .delta { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
   .delta b { color: var(--up); font-weight: 600; font-variant-numeric: tabular-nums; }
   .pending { margin-top: 6px; font-size: 13px; color: var(--text-secondary); }
+  .goal {
+    margin-top: 16px; padding: 16px; border-radius: 12px;
+    background: var(--surface-0); border: 1px solid var(--border);
+  }
+  .goal-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; font-weight: 600; }
+  .goal-pct { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .bar { position: relative; height: 12px; border-radius: 999px; background: var(--grid); margin: 10px 0 14px; overflow: hidden; }
+  .bar .fill { height: 100%; border-radius: 999px; background: var(--c); min-width: 6px; }
+  .goal-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px 16px; }
+  .goal-stats small { display: block; font-size: 12px; color: var(--text-secondary); }
+  .goal-stats b { font-size: 17px; font-variant-numeric: tabular-nums; }
+  .goal-stats span { display: block; font-size: 12px; color: var(--text-secondary); }
+  .cheer { margin: 12px 0 0; font-size: 14px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); }
   .toolbar { display: flex; gap: 6px; margin: 18px 0 4px; }
   .toolbar button {
     font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
@@ -121,6 +136,38 @@
   const dateLabel = d => { const [, m, day] = d.split("-"); return `${+m}/${+day}`; };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+  const fullDate = d => { const [y, m, day] = d.split("-"); return `${y}년 ${+m}월 ${+day}일`; };
+  const todayKST = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const daysBetween = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+  const niceRound = x => { const p = Math.pow(10, Math.floor(Math.log10(x))); return Math.max(p, Math.round(x / p) * p); };
+
+  function goalHTML(goal) {
+    if (!goal) return "";
+    const badges = goal.passed.length
+      ? `<div class="badges">${goal.passed.map(l => `<span class="badge">✅ ${esc(l)} 달성</span>`).join("")}</div>` : "";
+    if (goal.done) return `<div class="goal">${badges}<div class="goal-top">🎉 ${esc(goal.label)}까지 모두 달성했어요!</div></div>`;
+
+    const pct = goal.progress * 100;
+    let eta = `<div><small>예상 달성일</small><b>계산 중</b><span>00시 기록이 이틀 이상 쌓이면 나와요</span></div>`;
+    let pace = "", cheer = "";
+    if (goal.eta_date) {
+      const dday = daysBetween(todayKST(), goal.eta_date);
+      eta = `<div><small>예상 달성일</small><b>${fullDate(goal.eta_date)}</b><span>${dday > 0 ? `D-${dday}` : "곧 달성!"}</span></div>`;
+      pace = `<div><small>최근 ${goal.pace_days}일 하루 평균</small><b>+${fmt(goal.avg_daily)}회</b><span>이 속도 그대로라면</span></div>`;
+      const boost = niceRound(goal.avg_daily * 0.1);
+      const faster = goal.days_left - Math.ceil(goal.remaining / (goal.avg_daily + boost));
+      if (faster >= 1) cheer = `<p class="cheer">🔥 다 같이 하루 <b>${korean(boost)}회</b>만 더 들으면 <b>${faster}일</b> 더 빨리 달성할 수 있어요!</p>`;
+    }
+    return `<div class="goal">${badges}
+      <div class="goal-top"><span>🎯 ${esc(goal.label)} (${korean(goal.target)}회)까지</span><span class="goal-pct">${pct.toFixed(pct >= 99.9 ? 2 : 1)}%</span></div>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct.toFixed(1)}"><div class="fill" style="width:${Math.min(100, pct)}%"></div></div>
+      <div class="goal-stats">
+        <div><small>남은 횟수</small><b>${fmt(goal.remaining)}회</b><span>약 ${korean(goal.remaining)}회</span></div>
+        ${eta}${pace}
+      </div>${cheer}
+    </div>`;
+  }
+
   // GitHub Pages 주소(아이디.github.io/저장소)에서 입력 파일 편집 링크를 만든다
   (() => {
     const owner = location.hostname.split(".")[0];
@@ -164,6 +211,7 @@
           ? `전날 00시 대비 <b>+${fmt(g.delta)}회</b>`
           : "전날 기록이 생기면 하루 증가량이 표시돼요"}</div>
         ${g.pending ? `<div class="pending">✏️ 새로 입력된 숫자: ${fmt(g.pending.total)}회 (${g.pending.diff > 0 ? "+" : ""}${fmt(g.pending.diff)}) · 다음 00시에 확정</div>` : ""}
+        ${goalHTML(g.goal)}
         <div class="toolbar" role="group" aria-label="그래프 종류">
           <button type="button" data-kind="total" aria-pressed="true">누적</button>
           <button type="button" data-kind="daily" aria-pressed="false">하루 증가량</button>

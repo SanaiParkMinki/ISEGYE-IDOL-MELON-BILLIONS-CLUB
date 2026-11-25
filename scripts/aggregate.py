@@ -24,6 +24,8 @@ INPUT_FILE = ROOT / "data" / "input.txt"
 HISTORY_FILE = ROOT / "data" / "history.json"
 SITE_DATA_FILE = ROOT / "docs" / "data.json"
 SONGS_FILE = ROOT / "data" / "songs.json"  # 곡별 멜론 링크 (없어도 됨)
+GOALS_FILE = ROOT / "data" / "goals.json"  # 목표치 (없어도 됨)
+PACE_DAYS = 7  # 예상 달성일 계산에 쓰는 최근 기간(일)
 
 
 def clean_number(text):
@@ -122,8 +124,53 @@ def load_links():
     return {(g, s["title"]): s.get("melon") for g, songs in data.items() for s in songs}
 
 
+def load_goals():
+    if not GOALS_FILE.exists():
+        return {}
+    data = json.loads(GOALS_FILE.read_text(encoding="utf-8"))
+    return {k: sorted(v, key=lambda g: g["target"]) for k, v in data.items() if not k.startswith("_")}
+
+
+def compute_goal(steps, total, series):
+    """아직 못 넘은 첫 목표까지 남은 횟수와, 최근 속도로 계산한 예상 달성일."""
+    if not steps:
+        return None
+    passed = [g for g in steps if total >= g["target"]]
+    upcoming = [g for g in steps if total < g["target"]]
+    if not upcoming:
+        return {"label": steps[-1]["label"], "target": steps[-1]["target"], "done": True,
+                "passed": [g["label"] for g in passed]}
+    goal = upcoming[0]
+    remaining = goal["target"] - total
+    result = {"label": goal["label"], "target": goal["target"], "done": False,
+              "remaining": remaining, "progress": total / goal["target"],
+              "passed": [g["label"] for g in passed],
+              "avg_daily": None, "pace_days": None, "days_left": None, "eta_date": None}
+
+    # 최근 PACE_DAYS 일 안의 기록으로 하루 평균 증가량 계산
+    if len(series) >= 2:
+        last = series[-1]
+        last_day = datetime.fromisoformat(last["date"])
+        window = [p for p in series[:-1]
+                  if (last_day - datetime.fromisoformat(p["date"])).days <= PACE_DAYS]
+        first = window[0] if window else series[-2]
+        days = (last_day - datetime.fromisoformat(first["date"])).days
+        gained = last["total"] - first["total"]
+        if days > 0 and gained > 0:
+            avg = gained / days
+            days_left = -(-remaining // int(avg)) if avg >= 1 else None  # 올림
+            result.update({
+                "avg_daily": round(avg),
+                "pace_days": days,
+                "days_left": days_left,
+                "eta_date": (last_day + timedelta(days=days_left)).strftime("%Y-%m-%d") if days_left else None,
+            })
+    return result
+
+
 def build_site_data(history, pending, now):
     links = load_links()
+    goals = load_goals()
     snaps = sorted(history["snapshots"], key=lambda s: s["date"])
     latest = snaps[-1] if snaps else None
     before = snaps[-2] if len(snaps) >= 2 else None
@@ -166,6 +213,7 @@ def build_site_data(history, pending, now):
             "series": series,
             "songs": songs,
             "pending": pend,
+            "goal": compute_goal(goals.get(name), total, series),
         })
 
     return {

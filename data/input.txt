@@ -19,70 +19,70 @@
 # ─────────────────────────────────────────────────────────────
 
 # ── RE : WIND (2021-12-17)
-이세계아이돌 | RE : WIND | 64,248,519
-이세계아이돌 | RE : WIND (Inst.) | 8,400,262
+이세계아이돌 | RE : WIND |
+이세계아이돌 | RE : WIND (Inst.) |
 
 # ── 겨울봄 (2022-03-11)
-이세계아이돌 | 겨울봄 | 50,516,129
-이세계아이돌 | 겨울봄 (Inst.) | 7,554,241
+이세계아이돌 | 겨울봄 |
+이세계아이돌 | 겨울봄 (Inst.) |
 
 # ── LOCKDOWN (2023-06-22)
-이세계아이돌 | LOCKDOWN | 52,208,571
-이세계아이돌 | LOCKDOWN (Inst.) | 9,913,591
+이세계아이돌 | LOCKDOWN |
+이세계아이돌 | LOCKDOWN (Inst.) |
 
 # ── Another World (2023-07-21)
-이세계아이돌 | Another World | 42,396,251
-이세계아이돌 | Another World (Inst.) | 8,808,227
+이세계아이돌 | Another World |
+이세계아이돌 | Another World (Inst.) |
 
 # ── KIDDING (2023-08-18)
-이세계아이돌 | KIDDING | 79,488,655
-이세계아이돌 | KIDDING (Inst.) | 6,201,880
+이세계아이돌 | KIDDING |
+이세계아이돌 | KIDDING (Inst.) |
 
 # ── 이세계 페스티벌 (2023-09-24)
-이세계아이돌 | OVER | 43,255,464
-이세계아이돌 | Superhero | 42,775,689
-이세계아이돌 | OVER (inst.) | 5,112,808
-이세계아이돌 | Superhero (inst.) | 5,067,870
+이세계아이돌 | OVER |
+이세계아이돌 | Superhero |
+이세계아이돌 | OVER (inst.) |
+이세계아이돌 | Superhero (inst.) |
 
 # ── SYZYGY (2025-03-20)
-이세계아이돌 | SYZYGY | 13,560,934
-이세계아이돌 | SYZYGY (Inst.) | 1,866,254
+이세계아이돌 | SYZYGY |
+이세계아이돌 | SYZYGY (Inst.) |
 
 # ── Misty Rainbow (2025-04-25)
-이세계아이돌 | Misty Rainbow | 19,421,676
-이세계아이돌 | Misty Rainbow (Inst.) | 1,383,870
+이세계아이돌 | Misty Rainbow |
+이세계아이돌 | Misty Rainbow (Inst.) |
 
 # ── Stargazers (2025-05-18)
-이세계아이돌 | Stargazers [Stargazers] | 17,728,335
-이세계아이돌 | ELEVATE [Stargazers] | 13,753,025
-이세계아이돌 | MEMORY [Stargazers] | 13,754,744
-이세계아이돌 | Stargazers (Inst.) | 733,591
-이세계아이돌 | ELEVATE (Inst.) | 720,405
-이세계아이돌 | MEMORY (Inst.) | 717,912
+이세계아이돌 | Stargazers [Stargazers] |
+이세계아이돌 | ELEVATE [Stargazers] |
+이세계아이돌 | MEMORY [Stargazers] |
+이세계아이돌 | Stargazers (Inst.) |
+이세계아이돌 | ELEVATE (Inst.) |
+이세계아이돌 | MEMORY (Inst.) |
 
 # ── Be My Light (2025-11-03)
-이세계아이돌 | Be My Light | 23,688,149
-이세계아이돌 | Nameless | 21,478,877
-이세계아이돌 | Stargazers [Be My Light] | 10,536,685
-이세계아이돌 | ELEVATE [Be My Light] | 8,617,971
-이세계아이돌 | MEMORY [Be My Light] | 8,143,241
-이세계아이돌 | Be My Light (Inst.) | 134,198
-이세계아이돌 | Nameless (Inst.) | 133,150
+이세계아이돌 | Be My Light |
+이세계아이돌 | Nameless |
+이세계아이돌 | Stargazers [Be My Light] |
+이세계아이돌 | ELEVATE [Be My Light] |
+이세계아이돌 | MEMORY [Be My Light] |
+이세계아이돌 | Be My Light (Inst.) |
+이세계아이돌 | Nameless (Inst.) |
 
 # ── 화이트 (White) (2025-12-19)
-이세계아이돌 | 화이트 (White) | 17,907,315
+이세계아이돌 | 화이트 (White) |
 
 # ── Smile For You (2026-06-19)
-이세계아이돌 | Smile For You | 13,415,026
+이세계아이돌 | Smile For You |
 
 # ── Across Dimensions (2026-11-09)
-이세계아이돌 | 연애세포 (恋愛細胞) | 4,922,420
-이세계아이돌 | REBELS | 7,063,268
-이세계아이돌 | BACK 2 THE FUTURE | 3,741,380
-이세계아이돌 | ANTI-HERO | 3,715,427
-이세계아이돌 | Dream Residue | 2,704,016
+이세계아이돌 | 연애세포 (恋愛細胞) |
+이세계아이돌 | REBELS |
+이세계아이돌 | BACK 2 THE FUTURE |
+이세계아이돌 | ANTI-HERO |
+이세계아이돌 | Dream Residue |
 
 # ── 고세구 솔로 앨범: NO CAT, NO LIFE! (2026-09-28)
-고세구 《NO CAT, NO LIFE!》 | 고양이가 세상을 구한다! | 5,126,990
-고세구 《NO CAT, NO LIFE!》 | Your Turn | 3,735,111
-고세구 《NO CAT, NO LIFE!》 | PUMP JUMP BUMP | 3,735,413
+고세구 《NO CAT, NO LIFE!》 | 고양이가 세상을 구한다! |
+고세구 《NO CAT, NO LIFE!》 | Your Turn |
+고세구 《NO CAT, NO LIFE!》 | PUMP JUMP BUMP |
