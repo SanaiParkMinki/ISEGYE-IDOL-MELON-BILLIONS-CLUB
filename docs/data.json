@@ -1,289 +1,105 @@
 {
- "generated_at": "2026-11-25T17:32:34+09:00",
+ "generated_at": "2026-11-25T18:54:00+09:00",
  "confirmed_date": "2026-11-25",
- "only_pending": false,
- "pending_taken_at": "2026-11-25T17:32:34+09:00",
+ "basis_at": "2026-11-25T18:54:00+09:00",
+ "site_url": "https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/",
+ "events": [],
+ "releases": [
+  {
+   "album": "RE : WIND",
+   "date": "2021-12-17",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "겨울봄",
+   "date": "2022-03-11",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "LOCKDOWN",
+   "date": "2023-06-22",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "Another World",
+   "date": "2023-07-21",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "KIDDING",
+   "date": "2023-08-18",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "이세계 페스티벌",
+   "date": "2023-09-24",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "SYZYGY",
+   "date": "2025-03-20",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "Misty Rainbow",
+   "date": "2025-04-25",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "Stargazers",
+   "date": "2025-05-18",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "Be My Light",
+   "date": "2025-11-03",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "화이트 (White)",
+   "date": "2025-12-19",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "Smile For You",
+   "date": "2026-06-19",
+   "group": "이세계아이돌"
+  },
+  {
+   "album": "NO CAT, NO LIFE!",
+   "date": "2026-09-28",
+   "group": "고세구 《NO CAT, NO LIFE!》"
+  },
+  {
+   "album": "Across Dimensions",
+   "date": "2026-11-09",
+   "group": "이세계아이돌"
+  }
+ ],
  "groups": [
   {
    "name": "이세계아이돌",
    "total": 635790026,
-   "delta": null,
+   "prev_total": null,
    "prev_date": null,
+   "gap_days": null,
+   "delta": null,
+   "delta_per_day": null,
    "series": [
     {
      "date": "2026-11-25",
+     "at": "2026-11-25T18:54:00+09:00",
      "total": 635790026
     }
    ],
-   "songs": [
-    {
-     "title": "KIDDING",
-     "count": 79488655,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36710003"
-    },
-    {
-     "title": "RE : WIND",
-     "count": 64248519,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=34421197"
-    },
-    {
-     "title": "LOCKDOWN",
-     "count": 52208571,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36549241"
-    },
-    {
-     "title": "겨울봄",
-     "count": 50516129,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=34748940"
-    },
-    {
-     "title": "OVER",
-     "count": 43255464,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36820644"
-    },
-    {
-     "title": "Superhero",
-     "count": 42775689,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36820645"
-    },
-    {
-     "title": "Another World",
-     "count": 42396251,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36634860"
-    },
-    {
-     "title": "Be My Light",
-     "count": 23688149,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406667"
-    },
-    {
-     "title": "Nameless",
-     "count": 21478877,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406668"
-    },
-    {
-     "title": "Misty Rainbow",
-     "count": 19421676,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38852970"
-    },
-    {
-     "title": "화이트 (White)",
-     "count": 17907315,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600740747"
-    },
-    {
-     "title": "Stargazers [Stargazers]",
-     "count": 17728335,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958780"
-    },
-    {
-     "title": "MEMORY [Stargazers]",
-     "count": 13754744,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958782"
-    },
-    {
-     "title": "ELEVATE [Stargazers]",
-     "count": 13753025,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958781"
-    },
-    {
-     "title": "SYZYGY",
-     "count": 13560934,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38684087"
-    },
-    {
-     "title": "Smile For You",
-     "count": 13415026,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=602294070"
-    },
-    {
-     "title": "Stargazers [Be My Light]",
-     "count": 10536685,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406669"
-    },
-    {
-     "title": "LOCKDOWN (Inst.)",
-     "count": 9913591,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36549242"
-    },
-    {
-     "title": "Another World (Inst.)",
-     "count": 8808227,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36634861"
-    },
-    {
-     "title": "ELEVATE [Be My Light]",
-     "count": 8617971,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406670"
-    },
-    {
-     "title": "RE : WIND (Inst.)",
-     "count": 8400262,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=34421198"
-    },
-    {
-     "title": "MEMORY [Be My Light]",
-     "count": 8143241,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406671"
-    },
-    {
-     "title": "겨울봄 (Inst.)",
-     "count": 7554241,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=34748941"
-    },
-    {
-     "title": "REBELS",
-     "count": 7063268,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603813508"
-    },
-    {
-     "title": "KIDDING (Inst.)",
-     "count": 6201880,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36710004"
-    },
-    {
-     "title": "OVER (inst.)",
-     "count": 5112808,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36820646"
-    },
-    {
-     "title": "Superhero (inst.)",
-     "count": 5067870,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=36820647"
-    },
-    {
-     "title": "연애세포 (恋愛細胞)",
-     "count": 4922420,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603813507"
-    },
-    {
-     "title": "BACK 2 THE FUTURE",
-     "count": 3741380,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603813509"
-    },
-    {
-     "title": "ANTI-HERO",
-     "count": 3715427,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603813510"
-    },
-    {
-     "title": "Dream Residue",
-     "count": 2704016,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603813511"
-    },
-    {
-     "title": "SYZYGY (Inst.)",
-     "count": 1866254,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38684088"
-    },
-    {
-     "title": "Misty Rainbow (Inst.)",
-     "count": 1383870,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38852971"
-    },
-    {
-     "title": "Stargazers (Inst.)",
-     "count": 733591,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958783"
-    },
-    {
-     "title": "ELEVATE (Inst.)",
-     "count": 720405,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958784"
-    },
-    {
-     "title": "MEMORY (Inst.)",
-     "count": 717912,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=38958785"
-    },
-    {
-     "title": "Be My Light (Inst.)",
-     "count": 134198,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406672"
-    },
-    {
-     "title": "Nameless (Inst.)",
-     "count": 133150,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=600406673"
-    }
-   ],
-   "pending": null,
+   "summary": {
+    "week": null,
+    "prev_week": null,
+    "month": null,
+    "month_label": "11월",
+    "prev_month": null,
+    "prev_month_label": "10월"
+   },
    "goal": {
     "label": "멜론 빌리언스 클럽",
     "target": 1000000000,
@@ -295,44 +111,1037 @@
     "pace_days": null,
     "days_left": null,
     "eta_date": null
-   }
+   },
+   "albums": [
+    {
+     "album": "이세계 페스티벌",
+     "released": "2023-09-24",
+     "total": 96211831,
+     "inst_total": 10180678,
+     "songs": 4,
+     "share": 0.15132642392222742
+    },
+    {
+     "album": "KIDDING",
+     "released": "2023-08-18",
+     "total": 85690535,
+     "inst_total": 6201880,
+     "songs": 2,
+     "share": 0.13477804227145898
+    },
+    {
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "total": 72732271,
+     "inst_total": 267348,
+     "songs": 7,
+     "share": 0.11439668448023121
+    },
+    {
+     "album": "RE : WIND",
+     "released": "2021-12-17",
+     "total": 72648781,
+     "inst_total": 8400262,
+     "songs": 2,
+     "share": 0.11426536754132724
+    },
+    {
+     "album": "LOCKDOWN",
+     "released": "2023-06-22",
+     "total": 62122162,
+     "inst_total": 9913591,
+     "songs": 2,
+     "share": 0.09770861362961991
+    },
+    {
+     "album": "겨울봄",
+     "released": "2022-03-11",
+     "total": 58070370,
+     "inst_total": 7554241,
+     "songs": 2,
+     "share": 0.09133576751013707
+    },
+    {
+     "album": "Another World",
+     "released": "2023-07-21",
+     "total": 51204478,
+     "inst_total": 8808227,
+     "songs": 2,
+     "share": 0.0805367745734344
+    },
+    {
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "total": 47408012,
+     "inst_total": 2171908,
+     "songs": 6,
+     "share": 0.07456551701237289
+    },
+    {
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "total": 22146511,
+     "inst_total": 0,
+     "songs": 5,
+     "share": 0.03483305823359991
+    },
+    {
+     "album": "Misty Rainbow",
+     "released": "2025-04-25",
+     "total": 20805546,
+     "inst_total": 1383870,
+     "songs": 2,
+     "share": 0.032723926373767934
+    },
+    {
+     "album": "화이트 (White)",
+     "released": "2025-12-19",
+     "total": 17907315,
+     "inst_total": 0,
+     "songs": 1,
+     "share": 0.028165454423155736
+    },
+    {
+     "album": "SYZYGY",
+     "released": "2025-03-20",
+     "total": 15427188,
+     "inst_total": 1866254,
+     "songs": 2,
+     "share": 0.02426459580855394
+    },
+    {
+     "album": "Smile For You",
+     "released": "2026-06-19",
+     "total": 13415026,
+     "inst_total": 0,
+     "songs": 1,
+     "share": 0.021099774220113356
+    }
+   ],
+   "inst_share": 0.08925629009474269,
+   "focus": {
+    "title": "KIDDING",
+    "next": {
+     "target": 80000000,
+     "label": "8천만",
+     "remaining": 511345,
+     "days": null,
+     "eta": null
+    },
+    "count": 79488655
+   },
+   "songs": [
+    {
+     "order": 0,
+     "title": "RE : WIND",
+     "album": "RE : WIND",
+     "released": "2021-12-17",
+     "link": "https://www.melon.com/song/detail.htm?songId=34421197",
+     "inst": false,
+     "count": 64248519,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 70000000,
+      "label": "7천만",
+      "remaining": 5751481,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 1,
+     "title": "RE : WIND (Inst.)",
+     "album": "RE : WIND",
+     "released": "2021-12-17",
+     "link": "https://www.melon.com/song/detail.htm?songId=34421198",
+     "inst": true,
+     "count": 8400262,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 9000000,
+      "label": "900만",
+      "remaining": 599738,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 2,
+     "title": "겨울봄",
+     "album": "겨울봄",
+     "released": "2022-03-11",
+     "link": "https://www.melon.com/song/detail.htm?songId=34748940",
+     "inst": false,
+     "count": 50516129,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 60000000,
+      "label": "6천만",
+      "remaining": 9483871,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 3,
+     "title": "겨울봄 (Inst.)",
+     "album": "겨울봄",
+     "released": "2022-03-11",
+     "link": "https://www.melon.com/song/detail.htm?songId=34748941",
+     "inst": true,
+     "count": 7554241,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 8000000,
+      "label": "800만",
+      "remaining": 445759,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 4,
+     "title": "LOCKDOWN",
+     "album": "LOCKDOWN",
+     "released": "2023-06-22",
+     "link": "https://www.melon.com/song/detail.htm?songId=36549241",
+     "inst": false,
+     "count": 52208571,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 60000000,
+      "label": "6천만",
+      "remaining": 7791429,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 5,
+     "title": "LOCKDOWN (Inst.)",
+     "album": "LOCKDOWN",
+     "released": "2023-06-22",
+     "link": "https://www.melon.com/song/detail.htm?songId=36549242",
+     "inst": true,
+     "count": 9913591,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 10000000,
+      "label": "1천만",
+      "remaining": 86409,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 6,
+     "title": "Another World",
+     "album": "Another World",
+     "released": "2023-07-21",
+     "link": "https://www.melon.com/song/detail.htm?songId=36634860",
+     "inst": false,
+     "count": 42396251,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 50000000,
+      "label": "5천만",
+      "remaining": 7603749,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 7,
+     "title": "Another World (Inst.)",
+     "album": "Another World",
+     "released": "2023-07-21",
+     "link": "https://www.melon.com/song/detail.htm?songId=36634861",
+     "inst": true,
+     "count": 8808227,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 9000000,
+      "label": "900만",
+      "remaining": 191773,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 8,
+     "title": "KIDDING",
+     "album": "KIDDING",
+     "released": "2023-08-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=36710003",
+     "inst": false,
+     "count": 79488655,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 80000000,
+      "label": "8천만",
+      "remaining": 511345,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 9,
+     "title": "KIDDING (Inst.)",
+     "album": "KIDDING",
+     "released": "2023-08-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=36710004",
+     "inst": true,
+     "count": 6201880,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 7000000,
+      "label": "700만",
+      "remaining": 798120,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 10,
+     "title": "OVER",
+     "album": "이세계 페스티벌",
+     "released": "2023-09-24",
+     "link": "https://www.melon.com/song/detail.htm?songId=36820644",
+     "inst": false,
+     "count": 43255464,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 50000000,
+      "label": "5천만",
+      "remaining": 6744536,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 11,
+     "title": "Superhero",
+     "album": "이세계 페스티벌",
+     "released": "2023-09-24",
+     "link": "https://www.melon.com/song/detail.htm?songId=36820645",
+     "inst": false,
+     "count": 42775689,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 50000000,
+      "label": "5천만",
+      "remaining": 7224311,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 12,
+     "title": "OVER (inst.)",
+     "album": "이세계 페스티벌",
+     "released": "2023-09-24",
+     "link": "https://www.melon.com/song/detail.htm?songId=36820646",
+     "inst": true,
+     "count": 5112808,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 6000000,
+      "label": "600만",
+      "remaining": 887192,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 13,
+     "title": "Superhero (inst.)",
+     "album": "이세계 페스티벌",
+     "released": "2023-09-24",
+     "link": "https://www.melon.com/song/detail.htm?songId=36820647",
+     "inst": true,
+     "count": 5067870,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 6000000,
+      "label": "600만",
+      "remaining": 932130,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 14,
+     "title": "SYZYGY",
+     "album": "SYZYGY",
+     "released": "2025-03-20",
+     "link": "https://www.melon.com/song/detail.htm?songId=38684087",
+     "inst": false,
+     "count": 13560934,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 6439066,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 15,
+     "title": "SYZYGY (Inst.)",
+     "album": "SYZYGY",
+     "released": "2025-03-20",
+     "link": "https://www.melon.com/song/detail.htm?songId=38684088",
+     "inst": true,
+     "count": 1866254,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 2000000,
+      "label": "200만",
+      "remaining": 133746,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 16,
+     "title": "Misty Rainbow",
+     "album": "Misty Rainbow",
+     "released": "2025-04-25",
+     "link": "https://www.melon.com/song/detail.htm?songId=38852970",
+     "inst": false,
+     "count": 19421676,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 578324,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 17,
+     "title": "Misty Rainbow (Inst.)",
+     "album": "Misty Rainbow",
+     "released": "2025-04-25",
+     "link": "https://www.melon.com/song/detail.htm?songId=38852971",
+     "inst": true,
+     "count": 1383870,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 2000000,
+      "label": "200만",
+      "remaining": 616130,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 18,
+     "title": "Stargazers [Stargazers]",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958780",
+     "inst": false,
+     "count": 17728335,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 2271665,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 19,
+     "title": "ELEVATE [Stargazers]",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958781",
+     "inst": false,
+     "count": 13753025,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 6246975,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 20,
+     "title": "MEMORY [Stargazers]",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958782",
+     "inst": false,
+     "count": 13754744,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 6245256,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 21,
+     "title": "Stargazers (Inst.)",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958783",
+     "inst": true,
+     "count": 733591,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 800000,
+      "label": "80만",
+      "remaining": 66409,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 22,
+     "title": "ELEVATE (Inst.)",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958784",
+     "inst": true,
+     "count": 720405,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 800000,
+      "label": "80만",
+      "remaining": 79595,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 23,
+     "title": "MEMORY (Inst.)",
+     "album": "Stargazers",
+     "released": "2025-05-18",
+     "link": "https://www.melon.com/song/detail.htm?songId=38958785",
+     "inst": true,
+     "count": 717912,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 800000,
+      "label": "80만",
+      "remaining": 82088,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 24,
+     "title": "Be My Light",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406667",
+     "inst": false,
+     "count": 23688149,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 30000000,
+      "label": "3천만",
+      "remaining": 6311851,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 25,
+     "title": "Nameless",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406668",
+     "inst": false,
+     "count": 21478877,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 30000000,
+      "label": "3천만",
+      "remaining": 8521123,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 26,
+     "title": "Stargazers [Be My Light]",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406669",
+     "inst": false,
+     "count": 10536685,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 9463315,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 27,
+     "title": "ELEVATE [Be My Light]",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406670",
+     "inst": false,
+     "count": 8617971,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 9000000,
+      "label": "900만",
+      "remaining": 382029,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 28,
+     "title": "MEMORY [Be My Light]",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406671",
+     "inst": false,
+     "count": 8143241,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 9000000,
+      "label": "900만",
+      "remaining": 856759,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 29,
+     "title": "Be My Light (Inst.)",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406672",
+     "inst": true,
+     "count": 134198,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 200000,
+      "label": "20만",
+      "remaining": 65802,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 30,
+     "title": "Nameless (Inst.)",
+     "album": "Be My Light",
+     "released": "2025-11-03",
+     "link": "https://www.melon.com/song/detail.htm?songId=600406673",
+     "inst": true,
+     "count": 133150,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 200000,
+      "label": "20만",
+      "remaining": 66850,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 31,
+     "title": "화이트 (White)",
+     "album": "화이트 (White)",
+     "released": "2025-12-19",
+     "link": "https://www.melon.com/song/detail.htm?songId=600740747",
+     "inst": false,
+     "count": 17907315,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 2092685,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 32,
+     "title": "Smile For You",
+     "album": "Smile For You",
+     "released": "2026-06-19",
+     "link": "https://www.melon.com/song/detail.htm?songId=602294070",
+     "inst": false,
+     "count": 13415026,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 20000000,
+      "label": "2천만",
+      "remaining": 6584974,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 33,
+     "title": "연애세포 (恋愛細胞)",
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "link": "https://www.melon.com/song/detail.htm?songId=603813507",
+     "inst": false,
+     "count": 4922420,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 5000000,
+      "label": "500만",
+      "remaining": 77580,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 34,
+     "title": "REBELS",
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "link": "https://www.melon.com/song/detail.htm?songId=603813508",
+     "inst": false,
+     "count": 7063268,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 8000000,
+      "label": "800만",
+      "remaining": 936732,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 35,
+     "title": "BACK 2 THE FUTURE",
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "link": "https://www.melon.com/song/detail.htm?songId=603813509",
+     "inst": false,
+     "count": 3741380,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 4000000,
+      "label": "400만",
+      "remaining": 258620,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 36,
+     "title": "ANTI-HERO",
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "link": "https://www.melon.com/song/detail.htm?songId=603813510",
+     "inst": false,
+     "count": 3715427,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 4000000,
+      "label": "400만",
+      "remaining": 284573,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 37,
+     "title": "Dream Residue",
+     "album": "Across Dimensions",
+     "released": "2026-11-09",
+     "link": "https://www.melon.com/song/detail.htm?songId=603813511",
+     "inst": false,
+     "count": 2704016,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 3000000,
+      "label": "300만",
+      "remaining": 295984,
+      "days": null,
+      "eta": null
+     }
+    }
+   ]
   },
   {
    "name": "고세구 《NO CAT, NO LIFE!》",
    "total": 12597514,
-   "delta": null,
+   "prev_total": null,
    "prev_date": null,
+   "gap_days": null,
+   "delta": null,
+   "delta_per_day": null,
    "series": [
     {
      "date": "2026-11-25",
+     "at": "2026-11-25T18:54:00+09:00",
      "total": 12597514
     }
    ],
-   "songs": [
+   "summary": {
+    "week": null,
+    "prev_week": null,
+    "month": null,
+    "month_label": "11월",
+    "prev_month": null,
+    "prev_month_label": "10월"
+   },
+   "goal": null,
+   "albums": [
     {
-     "title": "고양이가 세상을 구한다!",
-     "count": 5126990,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603093102"
-    },
-    {
-     "title": "PUMP JUMP BUMP",
-     "count": 3735413,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603093104"
-    },
-    {
-     "title": "Your Turn",
-     "count": 3735111,
-     "delta": null,
-     "carried": false,
-     "link": "https://www.melon.com/song/detail.htm?songId=603093103"
+     "album": "NO CAT, NO LIFE!",
+     "released": "2026-09-28",
+     "total": 12597514,
+     "inst_total": 0,
+     "songs": 3,
+     "share": 1.0
     }
    ],
-   "pending": null,
-   "goal": null
+   "inst_share": 0.0,
+   "focus": {
+    "title": "PUMP JUMP BUMP",
+    "next": {
+     "target": 4000000,
+     "label": "400만",
+     "remaining": 264587,
+     "days": null,
+     "eta": null
+    },
+    "count": 3735413
+   },
+   "songs": [
+    {
+     "order": 0,
+     "title": "고양이가 세상을 구한다!",
+     "album": "NO CAT, NO LIFE!",
+     "released": "2026-09-28",
+     "link": "https://www.melon.com/song/detail.htm?songId=603093102",
+     "inst": false,
+     "count": 5126990,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 6000000,
+      "label": "600만",
+      "remaining": 873010,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 1,
+     "title": "Your Turn",
+     "album": "NO CAT, NO LIFE!",
+     "released": "2026-09-28",
+     "link": "https://www.melon.com/song/detail.htm?songId=603093103",
+     "inst": false,
+     "count": 3735111,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 4000000,
+      "label": "400만",
+      "remaining": 264889,
+      "days": null,
+      "eta": null
+     }
+    },
+    {
+     "order": 2,
+     "title": "PUMP JUMP BUMP",
+     "album": "NO CAT, NO LIFE!",
+     "released": "2026-09-28",
+     "link": "https://www.melon.com/song/detail.htm?songId=603093104",
+     "inst": false,
+     "count": 3735413,
+     "prev_count": null,
+     "carried": false,
+     "delta": null,
+     "delta_per_day": null,
+     "avg_daily": null,
+     "next": {
+      "target": 4000000,
+      "label": "400만",
+      "remaining": 264587,
+      "days": null,
+      "eta": null
+     }
+    }
+   ]
   }
  ]
 }
