@@ -1,15 +1,20 @@
 {
- "generated_at": "2026-11-25T17:02:09+09:00",
- "confirmed_date": null,
- "only_pending": true,
- "pending_taken_at": "2026-11-25T17:02:09+09:00",
+ "generated_at": "2026-11-25T17:03:26+09:00",
+ "confirmed_date": "2026-11-25",
+ "only_pending": false,
+ "pending_taken_at": null,
  "groups": [
   {
    "name": "이세계아이돌",
    "total": 635790026,
    "delta": null,
    "prev_date": null,
-   "series": [],
+   "series": [
+    {
+     "date": "2026-11-25",
+     "total": 635790026
+    }
+   ],
    "songs": [
     {
      "title": "KIDDING",
@@ -285,7 +290,12 @@
    "total": 12597514,
    "delta": null,
    "prev_date": null,
-   "series": [],
+   "series": [
+    {
+     "date": "2026-11-25",
+     "total": 12597514
+    }
+   ],
    "songs": [
     {
      "title": "고양이가 세상을 구한다!",
