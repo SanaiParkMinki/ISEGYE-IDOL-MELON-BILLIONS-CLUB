@@ -186,6 +186,15 @@
   .modal-box .seg { justify-content: center; margin-top: 12px; }
   .modal-box .seg a, .modal-box .seg button { font: inherit; font-size: 14px; padding: 8px 16px; border-radius: 999px; cursor: pointer; text-decoration: none; border: 1px solid var(--border); background: var(--text-primary); color: var(--surface-1); }
   .modal-box .seg .ghost { background: transparent; color: var(--text-primary); }
+  .modal-box .seg #share-discord { background: #5865f2; border-color: #5865f2; color: #fff; }
+  .modal-box .seg button:disabled { opacity: .55; cursor: wait; }
+  .dc-status { text-align: center; font-size: 13px; margin: 10px 0 0; min-height: 18px; color: var(--text-secondary); }
+  .dc-status.ok { color: var(--up); font-weight: 600; } .dc-status.bad { color: var(--down); font-weight: 600; }
+  .dc-setup { margin-top: 12px; padding: 12px; border-radius: 12px; background: var(--surface-0); border: 1px solid var(--border); font-size: 13px; }
+  .dc-setup input { width: 100%; margin: 6px 0; font: inherit; font-size: 13px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); }
+  .dc-setup p { margin: 4px 0 0; color: var(--text-secondary); }
+  .dc-forget { text-align: center; margin: 8px 0 0; }
+  .dc-forget button { font: inherit; font-size: 12px; background: none; border: 0; color: var(--text-secondary); text-decoration: underline; cursor: pointer; }
   .modal-box .seg.mode { margin: 0 0 12px; }
   .modal-box .seg.mode button { background: transparent; color: var(--text-secondary); font-size: 13px; padding: 6px 14px; }
   .modal-box .seg.mode button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); }
@@ -222,9 +231,19 @@
     <img id="share-img" alt="공유용 기록 이미지">
     <div class="seg">
       <a id="share-save" download>💾 이미지 저장</a>
+      <button type="button" id="share-discord">💬 디스코드로 보내기</button>
       <button type="button" id="share-native" hidden>📤 바로 공유</button>
       <button type="button" class="ghost" id="share-close">닫기</button>
     </div>
+    <p class="dc-status" id="dc-status" role="status"></p>
+    <div class="dc-setup" id="dc-setup" hidden>
+      <label for="dc-url"><b>디스코드 웹후크 주소</b> (처음 한 번만)</label>
+      <input id="dc-url" type="url" placeholder="https://discord.com/api/webhooks/..." autocomplete="off" spellcheck="false">
+      <p>이 주소는 <b>지금 쓰는 이 브라우저에만</b> 저장돼요. 사이트나 GitHub에는 올라가지 않아서 다른 사람은 보낼 수 없어요.
+        주소 만드는 법: 디스코드 채널 ⚙️ → 연동 → 웹후크 → 새 웹후크 → 웹후크 URL 복사</p>
+      <div class="seg"><button type="button" id="dc-save">저장하고 보내기</button></div>
+    </div>
+    <p class="dc-forget"><button type="button" id="dc-forget" hidden>이 기기에 저장된 디스코드 주소 지우기</button></p>
   </div>
 </div>
 
@@ -740,7 +759,7 @@
 
   const modal = document.getElementById("share-modal");
   const modeSeg = document.getElementById("share-mode");
-  let shareReq = 0;   // 버튼을 빨리 바꿔 눌러도 마지막에 고른 이미지만 보이게
+  let shareReq = 0, current = null;   // current: 지금 창에 보이는 이미지 {blob, name, mode}   // 버튼을 빨리 바꿔 눌러도 마지막에 고른 이미지만 보이게
   function showShare(mode) {
     const req = ++shareReq;
     modeSeg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === mode));
@@ -754,6 +773,7 @@
         : `isedol-melon-${at.slice(0, 10).replace(/-/g, "")}-${at.slice(11, 13)}.png`;
       document.getElementById("share-img").src = url;
       const save = document.getElementById("share-save"); save.href = url; save.download = name;
+      current = { blob, name, mode: mode === "week" && w ? "week" : "day" };
       const native = document.getElementById("share-native");
       const file = new File([blob], name, { type: "image/png" });
       native.hidden = !(navigator.canShare && navigator.canShare({ files: [file] }));
@@ -771,6 +791,64 @@
     const friday = isFriday(todayKST()) || isFriday(DATA.confirmed_date);
     showShare(w && friday ? "week" : "day");
   });
+  // ───────────── 디스코드로 보내기 ─────────────
+  // 웹후크 주소는 이 브라우저에만 저장 (사이트 파일에 넣으면 누구나 채널에 글을 쓸 수 있게 되므로)
+  const DC_KEY = "discord-webhook";
+  const dcStatus = document.getElementById("dc-status"), dcSetup = document.getElementById("dc-setup");
+  const dcBtn = document.getElementById("share-discord"), dcForget = document.getElementById("dc-forget");
+  const isWebhook = u => /^https:\/\/(ptb\.|canary\.)?discord(app)?\.com\/api\/webhooks\/\d+\/[\w-]+\/?$/.test(u);
+  const setStatus = (msg, cls = "") => { dcStatus.textContent = msg; dcStatus.className = "dc-status " + cls; };
+  const refreshForget = () => { dcForget.hidden = !store.get(DC_KEY); };
+
+  function dcMessage() {
+    const g = DATA.groups[0], w = g.weekly, site = location.origin + location.pathname;
+    if (current.mode === "week" && w) {
+      let t = `📅 **이세계아이돌 멜론 주간 리포트** (${weekRange(w)})\n1주간 **+${fmt(w.gain)}회**`;
+      if (w.prev_gain && w.complete) {
+        const ch = (w.gain - w.prev_gain) / w.prev_gain * 100;
+        t += ` · 지난주 대비 ${ch >= 0 ? "▲" : "▼"}${Math.abs(ch).toFixed(1)}%`;
+      }
+      return t + `\n${site}`;
+    }
+    let t = `📊 **${hourLabel(DATA.basis_at)} 기준** 이세계아이돌 멜론 누적 **${fmt(g.total)}회**`;
+    if (g.delta !== null) t += ` (+${fmt(g.delta)})`;
+    return t + `\n${site}`;
+  }
+
+  async function sendToDiscord(url) {
+    if (!current) return;
+    dcBtn.disabled = true; setStatus("디스코드로 보내는 중…");
+    const fd = new FormData();
+    fd.append("payload_json", JSON.stringify({ username: "이세돌 멜론 집계", content: dcMessage() }));
+    fd.append("files[0]", current.blob, current.name);
+    try {
+      const r = await fetch(url, { method: "POST", body: fd });
+      if (r.ok) { setStatus("✅ 디스코드로 보냈어요!", "ok"); refreshForget(); }
+      else if (r.status === 401 || r.status === 404) {
+        setStatus("❌ 웹후크 주소가 틀렸거나 지워졌어요. 주소를 다시 넣어 주세요.", "bad");
+        store.set(DC_KEY, ""); refreshForget(); dcSetup.hidden = false;
+      } else if (r.status === 429) setStatus("⏳ 너무 자주 보냈어요. 잠시 뒤에 다시 눌러 주세요.", "bad");
+      else setStatus(`❌ 보내지 못했어요 (오류 ${r.status}).`, "bad");
+    } catch (e) {
+      // 인터넷이 끊겼거나, 보냈지만 결과를 확인하지 못한 경우
+      setStatus("⚠️ 보냈는지 확인하지 못했어요. 디스코드 채널을 한 번 확인해 주세요.", "bad");
+    } finally { dcBtn.disabled = false; }
+  }
+
+  dcBtn.addEventListener("click", () => {
+    const url = store.get(DC_KEY);
+    if (url) { dcSetup.hidden = true; sendToDiscord(url); }
+    else { dcSetup.hidden = false; setStatus(""); document.getElementById("dc-url").focus(); }
+  });
+  document.getElementById("dc-save").addEventListener("click", () => {
+    const url = document.getElementById("dc-url").value.trim();
+    if (!isWebhook(url)) { setStatus("❌ 디스코드 웹후크 주소 모양이 아니에요. 'https://discord.com/api/webhooks/…' 로 시작해야 해요.", "bad"); return; }
+    store.set(DC_KEY, url); document.getElementById("dc-url").value = ""; dcSetup.hidden = true; refreshForget();
+    sendToDiscord(url);
+  });
+  dcForget.addEventListener("click", () => { store.set(DC_KEY, ""); refreshForget(); setStatus("이 기기에 저장된 디스코드 주소를 지웠어요."); });
+  document.getElementById("share-btn").addEventListener("click", () => { setStatus(""); dcSetup.hidden = true; refreshForget(); });
+
   document.getElementById("share-close").addEventListener("click", () => modal.classList.remove("open"));
   modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("open"); });
 })();
