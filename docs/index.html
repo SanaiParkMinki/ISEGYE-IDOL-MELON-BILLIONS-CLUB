@@ -4,16 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이세계아이돌 멜론 누적 스트리밍</title>
+<meta name="description" content="이세계아이돌 멜론 누적 스트리밍 합계와 멜론 빌리언스 클럽(10억 회)까지 남은 기록">
+<meta name="theme-color" content="#c9e9fb">
+<!-- 디스코드·카톡·트위터에 링크를 붙였을 때 나오는 미리보기 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="이세계아이돌 멜론 누적 스트리밍">
+<meta property="og:description" content="38곡 누적 합계 · 멜론 빌리언스 클럽(10억 회)까지 남은 횟수와 예상 달성일">
+<meta property="og:url" content="https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/">
+<meta property="og:image" content="https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root {
     color-scheme: light;
-    --surface-0: #f6f6f4;
+    --surface-0: #f5f3fb;   /* 카드 안쪽 상자 */
     --surface-1: #ffffff;
-    --border: #e4e4e0;
-    --grid: #ececea;
+    --card: rgba(255, 255, 255, 0.84);
+    --card-border: rgba(255, 255, 255, 0.95);
+    --ink: #26233f;         /* 카드 바깥(무지개 배경 위) 글자 */
+    --ink-soft: #4b4766;
+    --border: #e4e2ec;
+    --grid: #ececf1;
     --text-primary: #191919;
     --text-secondary: #666666;
     --up: #008a17;
+    --down: #d03b3b;
     --series-1: #257de0;  /* 이세계아이돌 */
     --series-2: #f47230;  /* 고세구 */
     --series-3: #00b894;
@@ -21,13 +37,16 @@
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      --surface-0: #111111;
-      --surface-1: #191919;
-      --border: #2c2c2c;
-      --grid: #262626;
+      --surface-0: #111116;
+      --surface-1: #191920;
+      --card: rgba(22, 22, 30, 0.86);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --border: #2c2c34;
+      --grid: #26262e;
       --text-primary: #efefef;
       --text-secondary: #9c9c9c;
       --up: #0aac23;
+      --down: #eb6263;
       --series-1: #338ced;
       --series-2: #e76624;
       --series-3: #00a888;
@@ -35,19 +54,57 @@
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: var(--surface-0); color: var(--text-primary);
+    margin: 0; background: #f4f1ff; color: var(--text-primary);
     font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
     line-height: 1.5; word-break: keep-all;
   }
-  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
-  header h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.02em; }
-  header p { margin: 0; color: var(--text-secondary); font-size: 14px; }
-  .notice {
-    margin-top: 16px; padding: 10px 14px; border-radius: 10px; font-size: 13px;
-    background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary);
+  /* 카드 바깥 배경: 《Across Dimensions》 표지처럼 가운데가 하얗게 빛나는 파스텔 무지개 */
+  body::before, body::after { content: ""; position: fixed; z-index: -1; pointer-events: none; }
+  body::before {
+    inset: -12%;
+    background:
+      radial-gradient(ellipse 42% 36% at 50% 36%, #ffffff 0%, rgba(255,255,255,.9) 28%, rgba(255,255,255,0) 72%),
+      radial-gradient(circle at 50% 0%,   #52d1f9 0%, transparent 42%),
+      radial-gradient(circle at 4% 4%,    #c4f3ec 0%, transparent 42%),
+      radial-gradient(circle at 96% 4%,   #aab4ed 0%, transparent 42%),
+      radial-gradient(circle at 0% 46%,   #e2f9ad 0%, transparent 38%),
+      radial-gradient(circle at 100% 46%, #e5c2ec 0%, transparent 38%),
+      radial-gradient(circle at 26% 80%,  #fcd9a7 0%, transparent 36%),
+      radial-gradient(circle at 0% 100%,  #fac0a9 0%, transparent 46%),
+      radial-gradient(circle at 52% 100%, #f986bd 0%, transparent 42%),
+      radial-gradient(circle at 76% 80%,  #f2b5e8 0%, transparent 34%),
+      radial-gradient(circle at 100% 100%,#9e7fcb 0%, transparent 46%),
+      #f4f1ff;
+    filter: blur(28px) saturate(1.15);
   }
+  body::after {   /* 가운데서 퍼지는 빛줄기 */
+    inset: 0;
+    background: repeating-conic-gradient(from 0deg at 50% 36%, rgba(255,255,255,.22) 0deg 1.2deg, rgba(255,255,255,0) 1.2deg 7deg);
+    -webkit-mask: radial-gradient(ellipse 70% 60% at 50% 36%, #000 0%, transparent 75%);
+            mask: radial-gradient(ellipse 70% 60% at 50% 36%, #000 0%, transparent 75%);
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+  header h1 { font-size: 24px; margin: 0 0 4px; letter-spacing: -0.02em; color: var(--ink); text-shadow: 0 1px 12px rgba(255,255,255,.9); }
+  header p { margin: 0; color: var(--ink-soft); font-size: 14px; font-weight: 500; text-shadow: 0 1px 10px rgba(255,255,255,.9); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .actions a, .actions button {
+    font: inherit; font-size: 13px; font-weight: 600; text-decoration: none; cursor: pointer;
+    padding: 7px 14px; border-radius: 999px; color: var(--ink);
+    background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.95);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(110, 90, 170, 0.12);
+  }
+  .actions a:hover, .actions button:hover { background: #fff; }
+  .celebrate {
+    margin-top: 18px; padding: 14px 18px; border-radius: 14px; font-weight: 600; color: var(--ink);
+    background: linear-gradient(100deg, #c4f3ec, #fdf6c8, #fcd9e8, #dcd3f7); border: 1px solid #fff;
+    box-shadow: 0 6px 24px rgba(240, 120, 180, 0.22);
+  }
+  .celebrate div + div { margin-top: 2px; }
   .group {
-    margin-top: 24px; background: var(--surface-1); border: 1px solid var(--border);
+    margin-top: 24px; background: var(--card); border: 1px solid var(--card-border);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(110, 90, 170, 0.18);
     border-radius: 16px; padding: 22px 22px 14px;
   }
   .group-head { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
@@ -56,12 +113,11 @@
   .hero-num { font-size: 38px; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
   .hero-ko { font-size: 15px; color: var(--text-secondary); }
   .delta { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
-  .delta b { color: var(--up); font-weight: 600; font-variant-numeric: tabular-nums; }
-  .pending { margin-top: 6px; font-size: 13px; color: var(--text-secondary); }
-  .goal {
-    margin-top: 16px; padding: 16px; border-radius: 12px;
-    background: var(--surface-0); border: 1px solid var(--border);
-  }
+  .delta b, .chips b { color: var(--up); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip { font-size: 13px; padding: 4px 10px; border-radius: 999px; background: var(--surface-0); border: 1px solid var(--border); color: var(--text-secondary); }
+  .chip .pct-up { color: var(--up); } .chip .pct-down { color: var(--down); }
+  .goal { margin-top: 16px; padding: 16px; border-radius: 12px; background: var(--surface-0); border: 1px solid var(--border); }
   .goal-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; font-weight: 600; }
   .goal-pct { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
   .bar { position: relative; height: 12px; border-radius: 999px; background: var(--grid); margin: 10px 0 14px; overflow: hidden; }
@@ -73,13 +129,16 @@
   .cheer { margin: 12px 0 0; font-size: 14px; }
   .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
   .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); }
-  .toolbar { display: flex; gap: 6px; margin: 18px 0 4px; }
-  .toolbar button {
+  .focus { margin-top: 12px; padding: 12px 14px; border-radius: 12px; border: 1px dashed var(--c); font-size: 14px; }
+  .focus small { color: var(--text-secondary); }
+  .toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin: 18px 0 4px; }
+  .seg { display: flex; gap: 6px; flex-wrap: wrap; }
+  .seg button {
     font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
     border: 1px solid var(--border); background: transparent; color: var(--text-secondary);
   }
-  .toolbar button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
-  .chart { position: relative; height: 220px; }
+  .seg button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
+  .chart { position: relative; height: 230px; }
   .chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
   .chart .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-secondary); font-size: 13px; text-align: center; }
   .tip {
@@ -90,35 +149,82 @@
   .tip b { font-variant-numeric: tabular-nums; }
   details { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
   summary { cursor: pointer; font-size: 14px; color: var(--text-secondary); padding: 4px 0; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
-  th, td { padding: 7px 4px; text-align: right; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+  .table-wrap { overflow-x: auto; margin-top: 6px; }
+  table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 7px 6px; text-align: right; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; vertical-align: middle; }
   th:first-child, td:first-child { text-align: left; }
   th { font-weight: 500; color: var(--text-secondary); font-size: 12px; }
-  td.up { color: var(--up); }
+  td small { display: block; font-size: 11px; color: var(--text-secondary); }
   td a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--text-secondary); }
+  tr.album-row td { font-size: 12px; font-weight: 600; color: var(--text-secondary); background: var(--surface-0); }
+  .inc { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+  .inc i { display: block; height: 6px; border-radius: 3px; background: var(--c); opacity: .55; }
+  .inc span.up { color: var(--up); }
+  .m-next { display: none; }
+  @media (max-width: 600px) {   /* 휴대폰: '다음 돌파'를 누적 숫자 아래로 접어서 표가 잘리지 않게 */
+    table { min-width: 0; font-size: 13px; }
+    th:nth-child(4), td:nth-child(4) { display: none; }
+    .m-next { display: block; }
+    .inc i { display: none; }
+    .hero-num { font-size: 32px; }
+  }
   .carried { color: var(--text-secondary); font-size: 11px; margin-left: 4px; }
-  footer { margin-top: 28px; font-size: 12px; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  .albums { list-style: none; padding: 0; margin: 6px 0 0; }
+  .albums li { display: grid; grid-template-columns: minmax(120px, 1.2fr) 2fr auto; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--grid); font-size: 14px; }
+  .albums small { display: block; font-size: 11px; color: var(--text-secondary); }
+  .albums .share { height: 8px; border-radius: 4px; background: var(--grid); overflow: hidden; }
+  .albums .share i { display: block; height: 100%; border-radius: 4px; background: var(--c); }
+  .albums .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .note { font-size: 13px; color: var(--text-secondary); margin: 6px 0 0; }
+  footer { margin-top: 28px; font-size: 12px; color: var(--ink-soft); font-weight: 500; display: flex; flex-wrap: wrap; gap: 6px 16px; }
   footer a { color: inherit; }
+  /* 공유 이미지 창 */
+  .modal { position: fixed; inset: 0; background: rgba(20, 16, 40, .55); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 50; }
+  .modal.open { display: flex; }
+  .modal-box { background: var(--surface-1); border-radius: 16px; padding: 16px; max-width: 460px; width: 100%; max-height: 92vh; overflow: auto; }
+  .modal-box img { width: 100%; border-radius: 10px; display: block; }
+  .modal-box .seg { justify-content: center; margin-top: 12px; }
+  .modal-box .seg a, .modal-box .seg button { font: inherit; font-size: 14px; padding: 8px 16px; border-radius: 999px; cursor: pointer; text-decoration: none; border: 1px solid var(--border); background: var(--text-primary); color: var(--surface-1); }
+  .modal-box .seg .ghost { background: transparent; color: var(--text-primary); }
+  #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 60; }
 </style>
 </head>
 <body>
+<canvas id="confetti" width="0" height="0"></canvas>
 <div class="wrap">
   <header>
     <h1>이세계아이돌 멜론 누적 스트리밍</h1>
     <p id="basis">불러오는 중…</p>
+    <div class="actions">
+      <button type="button" id="share-btn">📷 공유 이미지 만들기</button>
+      <a href="history.csv" download>⬇️ 엑셀로 받기</a>
+      <a href="input.html">✏️ 숫자 입력 도우미</a>
+    </div>
   </header>
-  <div id="notice"></div>
+  <div id="celebrate"></div>
   <main id="groups"></main>
   <footer>
-    <span>매일 한국 시간 00시에 그날 기록이 확정돼요.</span>
-    <a id="edit-link" href="#">숫자 입력하러 가기 ✏️</a>
+    <span>숫자를 입력하면 1~2분 뒤 자동으로 반영돼요.</span>
+    <a id="edit-link" href="#">input.txt 직접 고치기</a>
   </footer>
+</div>
+
+<div class="modal" id="share-modal" role="dialog" aria-label="공유 이미지">
+  <div class="modal-box">
+    <img id="share-img" alt="오늘의 기록 이미지">
+    <div class="seg">
+      <a id="share-save" download>💾 이미지 저장</a>
+      <button type="button" id="share-native" hidden>📤 바로 공유</button>
+      <button type="button" class="ghost" id="share-close">닫기</button>
+    </div>
+  </div>
 </div>
 
 <script>
 (() => {
   const COLORS = ["--series-1", "--series-2", "--series-3"];
-  const fmt = n => n.toLocaleString("ko-KR");
+  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const fmt = n => Math.round(n).toLocaleString("ko-KR");
   const korean = n => {
     const eok = Math.floor(n / 1e8), man = Math.floor((n % 1e8) / 1e4);
     if (eok && man) return `${eok}억 ${fmt(man)}만`;
@@ -126,29 +232,151 @@
     if (man) return `${fmt(man)}만`;
     return fmt(n);
   };
-  // 눈금 간격에 맞춰 소수점 자리를 정해서 같은 라벨이 반복되지 않게 함
-  const axisLabel = (n, step) => {
+  const axisLabel = (n, step) => {   // 눈금 간격에 맞춰 소수점 자리를 정해 같은 라벨이 반복되지 않게 함
     const dec = unit => Math.max(0, Math.min(3, -Math.floor(Math.log10(step / unit) + 1e-9)));
     if (step >= 1e7) return (n / 1e8).toFixed(dec(1e8)) + "억";
     if (step >= 1e4) return (n / 1e4).toLocaleString("ko-KR", { maximumFractionDigits: dec(1e4), minimumFractionDigits: dec(1e4) }) + "만";
     return fmt(n);
   };
+  const DAY = 864e5;
   const dateLabel = d => { const [, m, day] = d.split("-"); return `${+m}/${+day}`; };
-  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-
   const fullDate = d => { const [y, m, day] = d.split("-"); return `${y}년 ${+m}월 ${+day}일`; };
+  const hourLabel = iso => {   // 한국 시간 "2026년 11월 25일 17시"
+    const t = new Date(Date.parse(iso) + 9 * 3600e3).toISOString();
+    return `${fullDate(t.slice(0, 10))} ${+t.slice(11, 13)}시`;
+  };
   const todayKST = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
-  const daysBetween = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+  const daysBetween = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / DAY);
   const niceRound = x => { const p = Math.pow(10, Math.floor(Math.log10(x))); return Math.max(p, Math.round(x / p) * p); };
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const store = {   // 브라우저 저장소 (막혀 있어도 오류 없이 넘어감)
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+  };
+
+  // GitHub Pages 주소(아이디.github.io/저장소)에서 입력 파일 편집 링크를 만든다
+  (() => {
+    const link = document.getElementById("edit-link");
+    const repo = location.pathname.split("/").filter(Boolean)[0];
+    if (location.hostname.endsWith("github.io") && repo) {
+      link.href = `https://github.com/${location.hostname.split(".")[0]}/${repo}/edit/main/data/input.txt`;
+    } else link.style.display = "none";
+  })();
+
+  let DATA = null;
+  fetch("data.json?t=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => { DATA = d; render(d); celebrate(d); })
+    .catch(() => {
+      document.getElementById("basis").textContent = "아직 집계된 데이터가 없어요. 숫자를 입력하면 1~2분 뒤 나타나요.";
+    });
+
+  // ───────────── 화면 그리기 ─────────────
+  function render(data) {
+    document.getElementById("basis").textContent =
+      data.basis_at ? `${hourLabel(data.basis_at)} 기준` : `${fullDate(data.confirmed_date)} 기준`;
+
+    const root = document.getElementById("groups");
+    root.innerHTML = "";
+    data.groups.forEach((g, i) => {
+      const color = `var(${COLORS[i % COLORS.length]})`;
+      const sec = document.createElement("section");
+      sec.className = "group";
+      sec.style.setProperty("--c", color);
+      sec.innerHTML = `
+        <div class="group-head"><span class="dot"></span>${esc(g.name)} · ${g.songs.length}곡 합계</div>
+        <div class="hero">
+          <span class="hero-num">${fmt(g.total)}회</span>
+          <span class="hero-ko">약 ${korean(g.total)}회</span>
+        </div>
+        <div class="delta">${deltaText(g)}</div>
+        ${chipsHTML(g.summary)}
+        ${goalHTML(g.goal)}
+        ${focusHTML(g.focus)}
+        <div class="toolbar">
+          <div class="seg" data-role="kind">
+            <button type="button" data-v="total" aria-pressed="true">누적</button>
+            <button type="button" data-v="daily" aria-pressed="false">하루 증가량</button>
+          </div>
+          <div class="seg" data-role="period">
+            <button type="button" data-v="7" aria-pressed="false">7일</button>
+            <button type="button" data-v="30" aria-pressed="false">30일</button>
+            <button type="button" data-v="all" aria-pressed="true">전체</button>
+          </div>
+        </div>
+        <div class="chart"><div class="tip"></div></div>
+        <details>
+          <summary>곡별 숫자 보기 (${g.songs.length}곡)</summary>
+          <div class="toolbar" style="margin-top:8px">
+            <div class="seg" data-role="sort">
+              <button type="button" data-v="count" aria-pressed="true">누적순</button>
+              <button type="button" data-v="delta" aria-pressed="false">증가순</button>
+              <button type="button" data-v="next" aria-pressed="false">돌파 임박순</button>
+              <button type="button" data-v="album" aria-pressed="false">앨범순</button>
+            </div>
+          </div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>곡</th><th>누적 스트리밍</th><th>하루 증가</th><th>다음 돌파</th></tr></thead>
+            <tbody></tbody>
+          </table></div>
+        </details>
+        ${g.albums.length > 1 ? `
+        <details>
+          <summary>앨범별 보기 (${g.albums.length}개 앨범)</summary>
+          <p class="note">원곡 ${(100 - g.inst_share * 100).toFixed(1)}% · Inst. ${(g.inst_share * 100).toFixed(1)}%</p>
+          <ul class="albums">${g.albums.map(a => `
+            <li>
+              <div>${esc(a.album)}<small>${a.released ? fullDate(a.released) + " · " : ""}${a.songs}곡</small></div>
+              <div class="share" title="${(a.share * 100).toFixed(1)}%"><i style="width:${(a.share / g.albums[0].share * 100).toFixed(1)}%"></i></div>
+              <div class="num">${fmt(a.total)}회<small>${(a.share * 100).toFixed(1)}%</small></div>
+            </li>`).join("")}
+          </ul>
+        </details>` : ""}`;
+      root.appendChild(sec);
+
+      const state = { kind: "total", period: "all", sort: "count" };
+      const chartEl = sec.querySelector(".chart");
+      const releases = (data.releases || []).filter(r => r.group === g.name);
+      const draw = () => drawChart(chartEl, g.series, state.kind, color, state.period, releases);
+      sec.querySelectorAll(".seg[data-role]").forEach(seg => seg.addEventListener("click", e => {
+        const btn = e.target.closest("button"); if (!btn) return;
+        state[seg.dataset.role] = btn.dataset.v;
+        seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === btn));
+        if (seg.dataset.role === "sort") fillTable(sec, g, state.sort); else draw();
+      }));
+      fillTable(sec, g, state.sort);
+      draw();
+      new ResizeObserver(draw).observe(chartEl);
+    });
+  }
+
+  function deltaText(g) {
+    if (g.delta === null) return "이전 기록이 생기면 증가량이 표시돼요";
+    let t = `이전 기록(${dateLabel(g.prev_date)}) 대비 <b>+${fmt(g.delta)}회</b>`;
+    if (g.gap_days > 1) t += ` · ${g.gap_days}일치 (하루 평균 +${fmt(g.delta_per_day)}회)`;
+    return t;
+  }
+
+  function chipsHTML(s) {
+    if (!s) return "";
+    const pct = (a, b) => {
+      if (!b) return "";
+      const p = (a - b) / b * 100;
+      return ` <span class="${p >= 0 ? "pct-up" : "pct-down"}">${p >= 0 ? "▲" : "▼"}${Math.abs(p).toFixed(0)}%</span>`;
+    };
+    const chips = [];
+    if (s.week !== null) chips.push(`최근 7일 <b>+${korean(s.week)}</b>${s.prev_week !== null ? pct(s.week, s.prev_week) + " 그 전 7일 대비" : ""}`);
+    if (s.month !== null) chips.push(`${s.month_label} <b>+${korean(s.month)}</b>${s.prev_month !== null ? ` · ${s.prev_month_label} +${korean(s.prev_month)}` : ""}`);
+    return chips.length ? `<div class="chips">${chips.map(c => `<span class="chip">${c}</span>`).join("")}</div>` : "";
+  }
 
   function goalHTML(goal) {
     if (!goal) return "";
     const badges = goal.passed.length
       ? `<div class="badges">${goal.passed.map(l => `<span class="badge">✅ ${esc(l)} 달성</span>`).join("")}</div>` : "";
     if (goal.done) return `<div class="goal">${badges}<div class="goal-top">🎉 ${esc(goal.label)}까지 모두 달성했어요!</div></div>`;
-
     const pct = goal.progress * 100;
-    let eta = `<div><small>예상 달성일</small><b>계산 중</b><span>00시 기록이 이틀 이상 쌓이면 나와요</span></div>`;
+    let eta = `<div><small>예상 달성일</small><b>계산 중</b><span>기록이 이틀 이상 쌓이면 나와요</span></div>`;
     let pace = "", cheer = "";
     if (goal.eta_date) {
       const dday = daysBetween(todayKST(), goal.eta_date);
@@ -168,83 +396,43 @@
     </div>`;
   }
 
-  // GitHub Pages 주소(아이디.github.io/저장소)에서 입력 파일 편집 링크를 만든다
-  (() => {
-    const owner = location.hostname.split(".")[0];
-    const repo = location.pathname.split("/").filter(Boolean)[0];
-    const link = document.getElementById("edit-link");
-    if (location.hostname.endsWith("github.io") && repo) {
-      link.href = `https://github.com/${owner}/${repo}/edit/main/data/input.txt`;
-    } else link.style.display = "none";
-  })();
-
-  fetch("data.json?t=" + Date.now())
-    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(render)
-    .catch(() => {
-      document.getElementById("basis").textContent = "아직 집계된 데이터가 없어요. Actions가 한 번 실행되면 나타나요.";
-    });
-
-  function render(data) {
-    const basis = document.getElementById("basis");
-    if (data.confirmed_date) {
-      const [y, m, d] = data.confirmed_date.split("-");
-      basis.textContent = `${y}년 ${+m}월 ${+d}일 00시 기준`;
-    } else {
-      basis.textContent = "아직 00시 확정 기록 전이에요 · 지금 입력된 숫자로 보여드려요";
-    }
-
-    const root = document.getElementById("groups");
-    root.innerHTML = "";
-    data.groups.forEach((g, i) => {
-      const color = `var(${COLORS[i % COLORS.length]})`;
-      const sec = document.createElement("section");
-      sec.className = "group";
-      sec.style.setProperty("--c", color);
-      sec.innerHTML = `
-        <div class="group-head"><span class="dot"></span>${esc(g.name)} · ${g.songs.length}곡 합계</div>
-        <div class="hero">
-          <span class="hero-num">${fmt(g.total)}회</span>
-          <span class="hero-ko">약 ${korean(g.total)}회</span>
-        </div>
-        <div class="delta">${g.delta !== null
-          ? `전날 00시 대비 <b>+${fmt(g.delta)}회</b>`
-          : "전날 기록이 생기면 하루 증가량이 표시돼요"}</div>
-        ${g.pending ? `<div class="pending">✏️ 새로 입력된 숫자: ${fmt(g.pending.total)}회 (${g.pending.diff > 0 ? "+" : ""}${fmt(g.pending.diff)}) · 다음 00시에 확정</div>` : ""}
-        ${goalHTML(g.goal)}
-        <div class="toolbar" role="group" aria-label="그래프 종류">
-          <button type="button" data-kind="total" aria-pressed="true">누적</button>
-          <button type="button" data-kind="daily" aria-pressed="false">하루 증가량</button>
-        </div>
-        <div class="chart"><div class="tip"></div></div>
-        <details>
-          <summary>곡별 숫자 보기</summary>
-          <table>
-            <thead><tr><th>곡</th><th>누적 스트리밍</th><th>하루 증가</th></tr></thead>
-            <tbody>${g.songs.map(s => `
-              <tr>
-                <td>${s.link ? `<a href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}${s.carried ? '<span class="carried">(이전 숫자)</span>' : ""}</td>
-                <td>${fmt(s.count)}</td>
-                <td class="${s.delta > 0 ? "up" : ""}">${s.delta === null ? "–" : (s.delta > 0 ? "+" : "") + fmt(s.delta)}</td>
-              </tr>`).join("")}
-            </tbody>
-          </table>
-        </details>`;
-      root.appendChild(sec);
-
-      const chartEl = sec.querySelector(".chart");
-      let kind = "total";
-      const draw = () => drawChart(chartEl, g.series, kind, color);
-      sec.querySelectorAll(".toolbar button").forEach(btn => btn.addEventListener("click", () => {
-        kind = btn.dataset.kind;
-        sec.querySelectorAll(".toolbar button").forEach(b => b.setAttribute("aria-pressed", b === btn));
-        draw();
-      }));
-      draw();
-      new ResizeObserver(draw).observe(chartEl);
-    });
+  function focusHTML(f) {
+    if (!f) return "";
+    const when = f.next.days ? ` · 이 속도면 <b>약 ${f.next.days}일</b> (${dateLabel(f.next.eta)})` : "";
+    return `<div class="focus">🔥 <b>집중 스밍 추천</b> 「${esc(f.title)}」 — ${esc(f.next.label)}까지 <b>${fmt(f.next.remaining)}회</b>${when}
+      <br><small>원곡 중 다음 돌파가 가장 가까운 곡이에요</small></div>`;
   }
 
+  function fillTable(sec, g, sort) {
+    const songs = [...g.songs];
+    const inc = s => (s.delta_per_day ?? s.delta);
+    if (sort === "count") songs.sort((a, b) => b.count - a.count);
+    if (sort === "delta") songs.sort((a, b) => (inc(b) ?? -1) - (inc(a) ?? -1));
+    if (sort === "next") songs.sort((a, b) => (a.next.days ?? 1e9) - (b.next.days ?? 1e9) || a.next.remaining / a.next.target - b.next.remaining / b.next.target);
+    if (sort === "album") songs.sort((a, b) => (a.released || "").localeCompare(b.released || "") || a.order - b.order);
+    const maxInc = Math.max(1, ...songs.map(s => inc(s) || 0));
+    let lastAlbum = null, rows = "";
+    songs.forEach(s => {
+      if (sort === "album" && s.album !== lastAlbum) {
+        rows += `<tr class="album-row"><td colspan="4">${esc(s.album || "기타")}${s.released ? " · " + fullDate(s.released) : ""}</td></tr>`;
+        lastAlbum = s.album;
+      }
+      const v = inc(s);
+      const incCell = v === null ? "–" : `<div class="inc"><i style="width:${Math.max(2, v / maxInc * 60)}px"></i><span class="${v > 0 ? "up" : ""}">${v > 0 ? "+" : ""}${fmt(v)}</span></div>
+        ${g.gap_days > 1 && s.delta !== null ? `<small>${g.gap_days}일 평균</small>` : ""}`;
+      const nx = s.next;
+      rows += `<tr>
+        <td>${s.link ? `<a href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}${s.carried ? '<span class="carried">(이전 숫자)</span>' : ""}
+          ${sort !== "album" && s.album ? `<small>${esc(s.album)}</small>` : ""}</td>
+        <td>${fmt(s.count)}<small class="m-next">${esc(nx.label)}까지 ${korean(nx.remaining)}${nx.days ? ` · 약 ${nx.days}일` : ""}</small></td>
+        <td>${incCell}</td>
+        <td>${esc(nx.label)}까지 ${korean(nx.remaining)}<small>${nx.days ? `약 ${nx.days}일 (${dateLabel(nx.eta)})` : "속도 계산 중"}</small></td>
+      </tr>`;
+    });
+    sec.querySelector("tbody").innerHTML = rows;
+  }
+
+  // ───────────── 그래프 ─────────────
   function niceTicks(min, max, count = 4) {
     if (min === max) { const pad = Math.max(1, Math.abs(max) * 0.01); min -= pad; max += pad; }
     const raw = (max - min) / count;
@@ -256,31 +444,41 @@
     return ticks;
   }
 
-  function drawChart(el, series, kind, color) {
+  function drawChart(el, series, kind, color, period, releases) {
     el.querySelectorAll("svg, .empty").forEach(n => n.remove());
     const tip = el.querySelector(".tip");
     tip.style.display = "none";
 
-    let pts = series.map(s => ({ date: s.date, v: s.total }));
-    if (kind === "daily") pts = pts.slice(1).map((p, i) => ({ date: p.date, v: p.v - pts[i].v }));
-    const need = kind === "daily" ? "00시 기록이 이틀 이상" : "00시 기록이";
+    let pts = series.map(s => ({ date: s.date, at: s.at, v: s.total }));
+    if (kind === "daily") {   // 빠진 날이 있으면 그 기간의 하루 평균으로 나눠서 보여 줌
+      pts = pts.slice(1).map((p, i) => {
+        const gap = Math.max(1, daysBetween(pts[i].date, p.date));
+        return { date: p.date, at: p.at, from: pts[i].date, gap, sum: p.v - pts[i].v, v: (p.v - pts[i].v) / gap };
+      });
+    }
+    if (period !== "all" && pts.length) {
+      const cut = Date.parse(series[series.length - 1].date) - (+period - 1) * DAY;
+      pts = pts.filter(p => Date.parse(p.date) >= cut);
+    }
+    const need = kind === "daily" ? "기록이 이틀 이상" : "기록이";
     if (pts.length === 0) {
       el.insertAdjacentHTML("beforeend", `<div class="empty">${need} 쌓이면 그래프가 그려져요</div>`);
       return;
     }
 
     const W = el.clientWidth, H = el.clientHeight;
-    const m = { t: 10, r: 8, b: 26, l: 66 };
+    const m = { t: 22, r: 10, b: 26, l: 66 };
     const iw = W - m.l - m.r, ih = H - m.t - m.b;
     const vals = pts.map(p => p.v);
-    const ticks = kind === "daily"
-      ? niceTicks(0, Math.max(...vals, 1))
-      : niceTicks(Math.min(...vals), Math.max(...vals));
+    const ticks = kind === "daily" ? niceTicks(0, Math.max(...vals, 1)) : niceTicks(Math.min(...vals), Math.max(...vals));
     const y0 = ticks[0], y1 = ticks[ticks.length - 1];
     const y = v => m.t + ih - ((v - y0) / (y1 - y0)) * ih;
-    const band = iw / pts.length;
-    const x = i => kind === "daily" ? m.l + band * (i + 0.5)
-      : (pts.length === 1 ? m.l + iw / 2 : m.l + (iw * i) / (pts.length - 1));
+
+    // 가로축은 실제 날짜 간격 (빠진 날은 그만큼 비어 보이게)
+    const t = p => Date.parse(p.date);
+    let t0 = t(pts[0]), t1 = t(pts[pts.length - 1]);
+    if (kind === "daily") { t0 -= DAY / 2; t1 += DAY / 2; }
+    const x = p => t1 === t0 ? m.l + iw / 2 : m.l + ((t(p) - t0) / (t1 - t0)) * iw;
 
     const ns = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(ns, "svg");
@@ -289,31 +487,42 @@
     svg.setAttribute("aria-label", kind === "daily" ? "하루 증가량 막대그래프" : "누적 스트리밍 선그래프");
     let html = "";
 
-    ticks.forEach(t => {
-      html += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)" stroke-width="1"/>`;
-      html += `<text x="${m.l - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11" fill="var(--text-secondary)">${axisLabel(t, ticks[1] - ticks[0])}</text>`;
+    ticks.forEach(tk => {
+      html += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(tk)}" y2="${y(tk)}" stroke="var(--grid)" stroke-width="1"/>`;
+      html += `<text x="${m.l - 8}" y="${y(tk) + 4}" text-anchor="end" font-size="11" fill="var(--text-secondary)">${axisLabel(tk, ticks[1] - ticks[0])}</text>`;
     });
 
-    const every = Math.max(1, Math.ceil(pts.length / Math.max(1, Math.floor(iw / 56))));
+    // 발매일 표시
+    releases.forEach(r => {
+      const rt = Date.parse(r.date);
+      if (t1 === t0 || rt < t0 || rt > t1) return;
+      const rx = m.l + ((rt - t0) / (t1 - t0)) * iw;
+      html += `<line x1="${rx}" x2="${rx}" y1="${m.t - 4}" y2="${m.t + ih}" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="2 3" opacity=".7"/>`;
+      html += `<text x="${rx + 4}" y="${m.t - 8}" font-size="11" fill="var(--text-secondary)">💿 ${esc(r.album)}</text>`;
+    });
+
+    const maxLabels = Math.max(1, Math.floor(iw / 56));
+    const every = Math.max(1, Math.ceil(pts.length / maxLabels));
     pts.forEach((p, i) => {
       if (i % every === 0 || i === pts.length - 1) {
-        html += `<text x="${x(i)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="var(--text-secondary)">${dateLabel(p.date)}</text>`;
+        if (i !== pts.length - 1 && pts.length - 1 - i < every / 2) return;  // 마지막 라벨과 겹치지 않게
+        html += `<text x="${x(p)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="var(--text-secondary)">${dateLabel(p.date)}</text>`;
       }
     });
 
     if (kind === "daily") {
-      const bw = Math.max(2, Math.min(28, band - 2));
-      pts.forEach((p, i) => {
+      const minGapPx = pts.length > 1 ? Math.min(...pts.slice(1).map((p, i) => x(p) - x(pts[i]))) : iw;
+      const bw = Math.max(2, Math.min(28, minGapPx - 2));
+      pts.forEach(p => {
         const top = y(Math.max(0, p.v)), base = y(0), h = Math.max(0, base - top);
-        const r = Math.min(4, bw / 2, h);
-        const x0 = x(i) - bw / 2;
-        html += `<path d="M${x0},${base} V${top + r} Q${x0},${top} ${x0 + r},${top} H${x0 + bw - r} Q${x0 + bw},${top} ${x0 + bw},${top + r} V${base} Z" fill="${color}"/>`;
+        const r = Math.min(4, bw / 2, h), x0 = x(p) - bw / 2;
+        html += `<path d="M${x0},${base} V${top + r} Q${x0},${top} ${x0 + r},${top} H${x0 + bw - r} Q${x0 + bw},${top} ${x0 + bw},${top + r} V${base} Z" fill="${color}" opacity="${p.gap > 1 ? 0.45 : 1}"/>`;
       });
     } else {
-      const d = pts.map((p, i) => `${i ? "L" : "M"}${x(i)},${y(p.v)}`).join(" ");
+      const d = pts.map((p, i) => `${i ? "L" : "M"}${x(p)},${y(p.v)}`).join(" ");
       html += `<path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-      if (pts.length <= 45) pts.forEach((p, i) => {
-        html += `<circle cx="${x(i)}" cy="${y(p.v)}" r="4" fill="${color}" stroke="var(--surface-1)" stroke-width="2"/>`;
+      if (pts.length <= 45) pts.forEach(p => {
+        html += `<circle cx="${x(p)}" cy="${y(p.v)}" r="4" fill="${color}" stroke="var(--surface-1)" stroke-width="2"/>`;
       });
     }
 
@@ -327,22 +536,171 @@
     const show = evt => {
       const rect = svg.getBoundingClientRect();
       const px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - rect.left;
-      let best = 0;
-      pts.forEach((p, i) => { if (Math.abs(x(i) - px) < Math.abs(x(best) - px)) best = i; });
-      const p = pts[best];
+      let best = pts[0];
+      pts.forEach(p => { if (Math.abs(x(p) - px) < Math.abs(x(best) - px)) best = p; });
       cross.setAttribute("x1", x(best)); cross.setAttribute("x2", x(best));
       cross.setAttribute("visibility", "visible");
-      tip.innerHTML = `${p.date} 00시<br><b>${kind === "daily" ? "+" : ""}${fmt(p.v)}회</b>`;
+      const when = best.at ? hourLabel(best.at) + " 입력" : fullDate(best.date);
+      tip.innerHTML = kind === "daily"
+        ? (best.gap > 1
+            ? `${dateLabel(best.from)}~${dateLabel(best.date)} (${best.gap}일)<br>하루 평균 <b>+${fmt(best.v)}회</b><br>합계 +${fmt(best.sum)}회`
+            : `${when}<br><b>+${fmt(best.v)}회</b>`)
+        : `${when}<br><b>${fmt(best.v)}회</b>`;
       tip.style.display = "block";
       const tw = tip.offsetWidth;
       tip.style.left = Math.min(Math.max(0, x(best) - tw / 2), W - tw) + "px";
-      tip.style.top = Math.max(0, y(p.v) - 54) + "px";
+      tip.style.top = Math.max(0, y(best.v) - tip.offsetHeight - 10) + "px";
     };
     const hide = () => { cross.setAttribute("visibility", "hidden"); tip.style.display = "none"; };
     hit.addEventListener("mousemove", show);
     hit.addEventListener("touchstart", show, { passive: true });
     hit.addEventListener("mouseleave", hide);
   }
+
+  // ───────────── 돌파 축하 ─────────────
+  function celebrate(data) {
+    if (!data.events || !data.events.length) return;
+    if (Date.now() - Date.parse(data.basis_at) > 3 * DAY) return;   // 3일 지난 소식은 조용히
+    const box = document.getElementById("celebrate");
+    box.innerHTML = `<div class="celebrate">${data.events.slice(0, 4).map(e => `<div>🎉 ${esc(e.text)}</div>`).join("")}
+      ${data.events.length > 4 ? `<div style="font-weight:500">외 ${data.events.length - 4}개 돌파</div>` : ""}</div>`;
+    const key = "celebrated:" + data.basis_at;
+    if (store.get(key) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    store.set(key, "1");
+    confetti();
+  }
+
+  function confetti() {
+    const cv = document.getElementById("confetti"), ctx = cv.getContext("2d");
+    cv.width = innerWidth; cv.height = innerHeight;
+    const cols = ["#52d1f9", "#c4f3ec", "#e2f9ad", "#fcd9a7", "#f986bd", "#9e7fcb", "#aab4ed", "#ffffff"];
+    const ps = Array.from({ length: 160 }, () => ({
+      x: Math.random() * cv.width, y: -20 - Math.random() * cv.height * 0.5,
+      vx: (Math.random() - 0.5) * 3, vy: 2 + Math.random() * 3,
+      w: 6 + Math.random() * 6, h: 8 + Math.random() * 8, r: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3,
+      c: cols[Math.floor(Math.random() * cols.length)],
+    }));
+    const start = performance.now();
+    (function frame(now) {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ps.forEach(p => {
+        p.x += p.vx; p.y += p.vy; p.vy += 0.04; p.r += p.vr;
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+        ctx.fillStyle = p.c; ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h); ctx.restore();
+      });
+      if (now - start < 4000) requestAnimationFrame(frame);
+      else { ctx.clearRect(0, 0, cv.width, cv.height); cv.width = cv.height = 0; }
+    })(start);
+  }
+
+  // ───────────── 공유 이미지 ─────────────
+  const FONT = '"Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif';
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  function fitText(ctx, text, maxW, size, weight = 700) {
+    let s = size;
+    do { ctx.font = `${weight} ${s}px ${FONT}`; s -= 2; } while (ctx.measureText(text).width > maxW && s > 10);
+  }
+
+  function makeShareImage(data) {
+    const W = 1080, H = 1350;
+    const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    const ctx = cv.getContext("2d");
+    // 배경: 《Across Dimensions》 표지 색감
+    ctx.fillStyle = "#f4f1ff"; ctx.fillRect(0, 0, W, H);
+    const blobs = [[540, 0, "#52d1f9", 620], [0, 0, "#c4f3ec", 620], [W, 0, "#aab4ed", 620], [0, 620, "#e2f9ad", 520],
+      [W, 620, "#e5c2ec", 520], [280, 1080, "#fcd9a7", 520], [0, H, "#fac0a9", 640], [560, H, "#f986bd", 600],
+      [820, 1080, "#f2b5e8", 460], [W, H, "#9e7fcb", 640]];
+    blobs.forEach(([x, y, c, r]) => {
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, c); g.addColorStop(1, c + "00");
+      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    });
+    const glow = ctx.createRadialGradient(540, 470, 0, 540, 470, 560);
+    glow.addColorStop(0, "rgba(255,255,255,1)"); glow.addColorStop(.35, "rgba(255,255,255,.85)"); glow.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+    ctx.save(); ctx.translate(540, 470); ctx.fillStyle = "rgba(255,255,255,.12)";
+    for (let a = 0; a < 360; a += 7) { ctx.rotate(7 * Math.PI / 180); ctx.fillRect(0, -2, 900, 4); }
+    ctx.restore();
+
+    const ink = "#26233f", soft = "#5b5776";
+    ctx.fillStyle = ink; ctx.font = `800 52px ${FONT}`; ctx.fillText("이세계아이돌 멜론 누적 스트리밍", 72, 120);
+    ctx.fillStyle = soft; ctx.font = `600 30px ${FONT}`; ctx.fillText(hourLabel(data.basis_at) + " 기준", 72, 170);
+
+    const g = data.groups[0];
+    // 메인 카드
+    ctx.fillStyle = "rgba(255,255,255,.88)"; roundRect(ctx, 56, 210, W - 112, 1010, 36); ctx.fill();
+    let yy = 280;
+    ctx.fillStyle = soft; ctx.font = `700 30px ${FONT}`; ctx.fillText(`${g.name} · ${g.songs.length}곡 합계`, 100, yy);
+    yy += 100; fitText(ctx, `${fmt(g.total)}회`, W - 200, 96, 800); ctx.fillStyle = ink; ctx.fillText(`${fmt(g.total)}회`, 96, yy);
+    yy += 54; ctx.font = `600 30px ${FONT}`; ctx.fillStyle = soft; ctx.fillText(`약 ${korean(g.total)}회`, 100, yy);
+    if (g.delta !== null) {
+      ctx.fillStyle = "#0a8a2a"; ctx.font = `700 32px ${FONT}`;
+      ctx.fillText(`+${fmt(g.delta)}회 ${g.gap_days > 1 ? `(${g.gap_days}일치)` : "(이전 기록 대비)"}`, 100, yy + 50);
+      yy += 50;
+    }
+    const goal = g.goal;
+    if (goal && !goal.done) {
+      yy += 70;
+      ctx.fillStyle = ink; ctx.font = `700 32px ${FONT}`; ctx.fillText(`🎯 ${goal.label}까지`, 100, yy);
+      ctx.textAlign = "right"; ctx.font = `800 40px ${FONT}`; ctx.fillText(`${(goal.progress * 100).toFixed(1)}%`, W - 100, yy + 2); ctx.textAlign = "left";
+      yy += 30;
+      ctx.fillStyle = "#e6e3f0"; roundRect(ctx, 100, yy, W - 200, 26, 13); ctx.fill();
+      const bar = ctx.createLinearGradient(100, 0, W - 100, 0);
+      ["#52d1f9", "#aab4ed", "#e5c2ec", "#f986bd"].forEach((c, i, a) => bar.addColorStop(i / (a.length - 1), c));
+      ctx.fillStyle = bar; roundRect(ctx, 100, yy, Math.max(26, (W - 200) * Math.min(1, goal.progress)), 26, 13); ctx.fill();
+      yy += 70;
+      ctx.fillStyle = soft; ctx.font = `600 28px ${FONT}`;
+      let line = `남은 ${korean(goal.remaining)}회`;
+      if (goal.eta_date) line += ` · 예상 ${fullDate(goal.eta_date)} (D-${Math.max(0, daysBetween(todayKST(), goal.eta_date))})`;
+      ctx.fillText(line, 100, yy);
+    }
+    const risers = g.songs.filter(s => s.delta).sort((a, b) => b.delta - a.delta).slice(0, 5);
+    if (risers.length) {
+      yy += 80; ctx.fillStyle = ink; ctx.font = `700 30px ${FONT}`; ctx.fillText("📈 많이 오른 곡", 100, yy);
+      risers.forEach((s, i) => {
+        yy += 50; ctx.fillStyle = ink; ctx.font = `600 28px ${FONT}`;
+        const name = `${i + 1}. ${s.title}`;
+        ctx.fillText(name.length > 26 ? name.slice(0, 25) + "…" : name, 110, yy);
+        ctx.textAlign = "right"; ctx.fillStyle = "#0a8a2a"; ctx.fillText(`+${fmt(s.delta)}`, W - 100, yy); ctx.textAlign = "left";
+      });
+    }
+    if (g.focus) {   // 카드 아래쪽: 집중 스밍 추천곡
+      yy = Math.max(yy + 80, 1150);
+      const f = g.focus;
+      const text = `🔥 집중 추천 「${f.title}」 ${f.next.label}까지 ${korean(f.next.remaining)}회` + (f.next.days ? ` · 약 ${f.next.days}일` : "");
+      yy = Math.min(yy, 1180);
+      ctx.fillStyle = "#e6e3f0"; ctx.fillRect(100, yy - 58, W - 200, 2);   // 구분선
+      fitText(ctx, text, W - 200, 30, 700); ctx.fillStyle = ink; ctx.fillText(text, 100, yy);
+    }
+    // 공유 이미지에는 이세계아이돌 그룹만 넣음 (고세구 솔로 앨범 제외)
+    ctx.fillStyle = ink; ctx.font = `600 24px ${FONT}`;
+    ctx.fillText((location.host + location.pathname).replace(/\/$/, ""), 72, H - 40);
+    ctx.textAlign = "right"; ctx.fillText("#이세계아이돌 #멜론스밍", W - 72, H - 40); ctx.textAlign = "left";
+    return cv;
+  }
+
+  const modal = document.getElementById("share-modal");
+  document.getElementById("share-btn").addEventListener("click", () => {
+    if (!DATA) return;
+    const cv = makeShareImage(DATA);
+    cv.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const at = new Date(Date.parse(DATA.basis_at) + 9 * 3600e3).toISOString();
+      const name = `isedol-melon-${at.slice(0, 10).replace(/-/g, "")}-${at.slice(11, 13)}.png`;
+      document.getElementById("share-img").src = url;
+      const save = document.getElementById("share-save"); save.href = url; save.download = name;
+      const native = document.getElementById("share-native");
+      const file = new File([blob], name, { type: "image/png" });
+      native.hidden = !(navigator.canShare && navigator.canShare({ files: [file] }));
+      native.onclick = () => navigator.share({ files: [file], title: "이세계아이돌 멜론 누적 스트리밍" }).catch(() => {});
+      modal.classList.add("open");
+    }, "image/png");
+  });
+  document.getElementById("share-close").addEventListener("click", () => modal.classList.remove("open"));
+  modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("open"); });
 })();
 </script>
 </body>
