@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이세계아이돌 멜론 누적 스트리밍</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0: #f6f6f4;
+    --surface-1: #ffffff;
+    --border: #e4e4e0;
+    --grid: #ececea;
+    --text-primary: #191919;
+    --text-secondary: #666666;
+    --up: #008a17;
+    --series-1: #257de0;  /* 이세계아이돌 */
+    --series-2: #f47230;  /* 고세구 */
+    --series-3: #00b894;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface-0: #111111;
+      --surface-1: #191919;
+      --border: #2c2c2c;
+      --grid: #262626;
+      --text-primary: #efefef;
+      --text-secondary: #9c9c9c;
+      --up: #0aac23;
+      --series-1: #338ced;
+      --series-2: #e76624;
+      --series-3: #00a888;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--surface-0); color: var(--text-primary);
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 32px 20px 64px; }
+  header h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+  .notice {
+    margin-top: 16px; padding: 10px 14px; border-radius: 10px; font-size: 13px;
+    background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary);
+  }
+  .group {
+    margin-top: 24px; background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px 22px 14px;
+  }
+  .group-head { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); flex: none; }
+  .hero { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .hero-num { font-size: 38px; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .hero-ko { font-size: 15px; color: var(--text-secondary); }
+  .delta { font-size: 14px; color: var(--text-secondary); margin-top: 2px; }
+  .delta b { color: var(--up); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pending { margin-top: 6px; font-size: 13px; color: var(--text-secondary); }
+  .toolbar { display: flex; gap: 6px; margin: 18px 0 4px; }
+  .toolbar button {
+    font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--border); background: transparent; color: var(--text-secondary);
+  }
+  .toolbar button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
+  .chart { position: relative; height: 220px; }
+  .chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .chart .empty { position: absolute; inset: 0; display: grid; place-items: center; color: var(--text-secondary); font-size: 13px; text-align: center; }
+  .tip {
+    position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 6px 10px; font-size: 12px; white-space: nowrap; display: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12); z-index: 2;
+  }
+  .tip b { font-variant-numeric: tabular-nums; }
+  details { margin-top: 10px; border-top: 1px solid var(--border); padding-top: 8px; }
+  summary { cursor: pointer; font-size: 14px; color: var(--text-secondary); padding: 4px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 6px; }
+  th, td { padding: 7px 4px; text-align: right; border-bottom: 1px solid var(--grid); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 500; color: var(--text-secondary); font-size: 12px; }
+  td.up { color: var(--up); }
+  td a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--text-secondary); }
+  .carried { color: var(--text-secondary); font-size: 11px; margin-left: 4px; }
+  footer { margin-top: 28px; font-size: 12px; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>이세계아이돌 멜론 누적 스트리밍</h1>
+    <p id="basis">불러오는 중…</p>
+  </header>
+  <div id="notice"></div>
+  <main id="groups"></main>
+  <footer>
+    <span>매일 한국 시간 00시에 그날 기록이 확정돼요.</span>
+    <a id="edit-link" href="#">숫자 입력하러 가기 ✏️</a>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const COLORS = ["--series-1", "--series-2", "--series-3"];
+  const fmt = n => n.toLocaleString("ko-KR");
+  const korean = n => {
+    const eok = Math.floor(n / 1e8), man = Math.floor((n % 1e8) / 1e4);
+    if (eok && man) return `${eok}억 ${fmt(man)}만`;
+    if (eok) return `${eok}억`;
+    if (man) return `${fmt(man)}만`;
+    return fmt(n);
+  };
+  // 눈금 간격에 맞춰 소수점 자리를 정해서 같은 라벨이 반복되지 않게 함
+  const axisLabel = (n, step) => {
+    const dec = unit => Math.max(0, Math.min(3, -Math.floor(Math.log10(step / unit) + 1e-9)));
+    if (step >= 1e7) return (n / 1e8).toFixed(dec(1e8)) + "억";
+    if (step >= 1e4) return (n / 1e4).toLocaleString("ko-KR", { maximumFractionDigits: dec(1e4), minimumFractionDigits: dec(1e4) }) + "만";
+    return fmt(n);
+  };
+  const dateLabel = d => { const [, m, day] = d.split("-"); return `${+m}/${+day}`; };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  // GitHub Pages 주소(아이디.github.io/저장소)에서 입력 파일 편집 링크를 만든다
+  (() => {
+    const owner = location.hostname.split(".")[0];
+    const repo = location.pathname.split("/").filter(Boolean)[0];
+    const link = document.getElementById("edit-link");
+    if (location.hostname.endsWith("github.io") && repo) {
+      link.href = `https://github.com/${owner}/${repo}/edit/main/data/input.txt`;
+    } else link.style.display = "none";
+  })();
+
+  fetch("data.json?t=" + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      document.getElementById("basis").textContent = "아직 집계된 데이터가 없어요. Actions가 한 번 실행되면 나타나요.";
+    });
+
+  function render(data) {
+    const basis = document.getElementById("basis");
+    if (data.confirmed_date) {
+      const [y, m, d] = data.confirmed_date.split("-");
+      basis.textContent = `${y}년 ${+m}월 ${+d}일 00시 기준`;
+    } else {
+      basis.textContent = "아직 00시 확정 기록 전이에요 · 지금 입력된 숫자로 보여드려요";
+    }
+
+    const root = document.getElementById("groups");
+    root.innerHTML = "";
+    data.groups.forEach((g, i) => {
+      const color = `var(${COLORS[i % COLORS.length]})`;
+      const sec = document.createElement("section");
+      sec.className = "group";
+      sec.style.setProperty("--c", color);
+      sec.innerHTML = `
+        <div class="group-head"><span class="dot"></span>${esc(g.name)} · ${g.songs.length}곡 합계</div>
+        <div class="hero">
+          <span class="hero-num">${fmt(g.total)}회</span>
+          <span class="hero-ko">약 ${korean(g.total)}회</span>
+        </div>
+        <div class="delta">${g.delta !== null
+          ? `전날 00시 대비 <b>+${fmt(g.delta)}회</b>`
+          : "전날 기록이 생기면 하루 증가량이 표시돼요"}</div>
+        ${g.pending ? `<div class="pending">✏️ 새로 입력된 숫자: ${fmt(g.pending.total)}회 (${g.pending.diff > 0 ? "+" : ""}${fmt(g.pending.diff)}) · 다음 00시에 확정</div>` : ""}
+        <div class="toolbar" role="group" aria-label="그래프 종류">
+          <button type="button" data-kind="total" aria-pressed="true">누적</button>
+          <button type="button" data-kind="daily" aria-pressed="false">하루 증가량</button>
+        </div>
+        <div class="chart"><div class="tip"></div></div>
+        <details>
+          <summary>곡별 숫자 보기</summary>
+          <table>
+            <thead><tr><th>곡</th><th>누적 스트리밍</th><th>하루 증가</th></tr></thead>
+            <tbody>${g.songs.map(s => `
+              <tr>
+                <td>${s.link ? `<a href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}${s.carried ? '<span class="carried">(이전 숫자)</span>' : ""}</td>
+                <td>${fmt(s.count)}</td>
+                <td class="${s.delta > 0 ? "up" : ""}">${s.delta === null ? "–" : (s.delta > 0 ? "+" : "") + fmt(s.delta)}</td>
+              </tr>`).join("")}
+            </tbody>
+          </table>
+        </details>`;
+      root.appendChild(sec);
+
+      const chartEl = sec.querySelector(".chart");
+      let kind = "total";
+      const draw = () => drawChart(chartEl, g.series, kind, color);
+      sec.querySelectorAll(".toolbar button").forEach(btn => btn.addEventListener("click", () => {
+        kind = btn.dataset.kind;
+        sec.querySelectorAll(".toolbar button").forEach(b => b.setAttribute("aria-pressed", b === btn));
+        draw();
+      }));
+      draw();
+      new ResizeObserver(draw).observe(chartEl);
+    });
+  }
+
+  function niceTicks(min, max, count = 4) {
+    if (min === max) { const pad = Math.max(1, Math.abs(max) * 0.01); min -= pad; max += pad; }
+    const raw = (max - min) / count;
+    const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw);
+    const lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step;
+    const ticks = [];
+    for (let v = lo; v <= hi + step / 2; v += step) ticks.push(v);
+    return ticks;
+  }
+
+  function drawChart(el, series, kind, color) {
+    el.querySelectorAll("svg, .empty").forEach(n => n.remove());
+    const tip = el.querySelector(".tip");
+    tip.style.display = "none";
+
+    let pts = series.map(s => ({ date: s.date, v: s.total }));
+    if (kind === "daily") pts = pts.slice(1).map((p, i) => ({ date: p.date, v: p.v - pts[i].v }));
+    const need = kind === "daily" ? "00시 기록이 이틀 이상" : "00시 기록이";
+    if (pts.length === 0) {
+      el.insertAdjacentHTML("beforeend", `<div class="empty">${need} 쌓이면 그래프가 그려져요</div>`);
+      return;
+    }
+
+    const W = el.clientWidth, H = el.clientHeight;
+    const m = { t: 10, r: 8, b: 26, l: 66 };
+    const iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const vals = pts.map(p => p.v);
+    const ticks = kind === "daily"
+      ? niceTicks(0, Math.max(...vals, 1))
+      : niceTicks(Math.min(...vals), Math.max(...vals));
+    const y0 = ticks[0], y1 = ticks[ticks.length - 1];
+    const y = v => m.t + ih - ((v - y0) / (y1 - y0)) * ih;
+    const band = iw / pts.length;
+    const x = i => kind === "daily" ? m.l + band * (i + 0.5)
+      : (pts.length === 1 ? m.l + iw / 2 : m.l + (iw * i) / (pts.length - 1));
+
+    const ns = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", kind === "daily" ? "하루 증가량 막대그래프" : "누적 스트리밍 선그래프");
+    let html = "";
+
+    ticks.forEach(t => {
+      html += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)" stroke-width="1"/>`;
+      html += `<text x="${m.l - 8}" y="${y(t) + 4}" text-anchor="end" font-size="11" fill="var(--text-secondary)">${axisLabel(t, ticks[1] - ticks[0])}</text>`;
+    });
+
+    const every = Math.max(1, Math.ceil(pts.length / Math.max(1, Math.floor(iw / 56))));
+    pts.forEach((p, i) => {
+      if (i % every === 0 || i === pts.length - 1) {
+        html += `<text x="${x(i)}" y="${H - 6}" text-anchor="middle" font-size="11" fill="var(--text-secondary)">${dateLabel(p.date)}</text>`;
+      }
+    });
+
+    if (kind === "daily") {
+      const bw = Math.max(2, Math.min(28, band - 2));
+      pts.forEach((p, i) => {
+        const top = y(Math.max(0, p.v)), base = y(0), h = Math.max(0, base - top);
+        const r = Math.min(4, bw / 2, h);
+        const x0 = x(i) - bw / 2;
+        html += `<path d="M${x0},${base} V${top + r} Q${x0},${top} ${x0 + r},${top} H${x0 + bw - r} Q${x0 + bw},${top} ${x0 + bw},${top + r} V${base} Z" fill="${color}"/>`;
+      });
+    } else {
+      const d = pts.map((p, i) => `${i ? "L" : "M"}${x(i)},${y(p.v)}`).join(" ");
+      html += `<path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+      if (pts.length <= 45) pts.forEach((p, i) => {
+        html += `<circle cx="${x(i)}" cy="${y(p.v)}" r="4" fill="${color}" stroke="var(--surface-1)" stroke-width="2"/>`;
+      });
+    }
+
+    html += `<line class="cross" x1="0" x2="0" y1="${m.t}" y2="${m.t + ih}" stroke="var(--text-secondary)" stroke-dasharray="3 3" visibility="hidden"/>`;
+    html += `<rect x="${m.l}" y="${m.t}" width="${iw}" height="${ih}" fill="transparent"/>`;
+    svg.innerHTML = html;
+    el.insertBefore(svg, tip);
+
+    const cross = svg.querySelector(".cross");
+    const hit = svg.querySelector("rect");
+    const show = evt => {
+      const rect = svg.getBoundingClientRect();
+      const px = (evt.touches ? evt.touches[0].clientX : evt.clientX) - rect.left;
+      let best = 0;
+      pts.forEach((p, i) => { if (Math.abs(x(i) - px) < Math.abs(x(best) - px)) best = i; });
+      const p = pts[best];
+      cross.setAttribute("x1", x(best)); cross.setAttribute("x2", x(best));
+      cross.setAttribute("visibility", "visible");
+      tip.innerHTML = `${p.date} 00시<br><b>${kind === "daily" ? "+" : ""}${fmt(p.v)}회</b>`;
+      tip.style.display = "block";
+      const tw = tip.offsetWidth;
+      tip.style.left = Math.min(Math.max(0, x(best) - tw / 2), W - tw) + "px";
+      tip.style.top = Math.max(0, y(p.v) - 54) + "px";
+    };
+    const hide = () => { cross.setAttribute("visibility", "hidden"); tip.style.display = "none"; };
+    hit.addEventListener("mousemove", show);
+    hit.addEventListener("touchstart", show, { passive: true });
+    hit.addEventListener("mouseleave", hide);
+  }
+})();
+</script>
+</body>
+</html>

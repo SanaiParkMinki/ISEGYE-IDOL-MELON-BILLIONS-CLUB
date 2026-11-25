@@ -1,0 +1,88 @@
+# ─────────────────────────────────────────────────────────────
+#  이세계아이돌 멜론 누적 스트리밍 입력 파일
+# ─────────────────────────────────────────────────────────────
+#  형식:   그룹 | 곡 제목 | 누적 스트리밍 수
+#
+#  - 숫자에 쉼표, 띄어쓰기, '회'가 들어가도 괜찮아요. (예: 12,345,678회)
+#  - 숫자 칸을 비워두면 직전 기록 숫자를 그대로 이어서 써요.
+#  - 그룹 이름이 같은 곡끼리 합계를 내요.
+#      · "이세계아이돌" → 그룹 명의 곡만
+#      · "고세구 《NO CAT, NO LIFE!》" → 고세구 솔로 앨범 곡 (따로 합계)
+#  - 곡을 추가할 땐 줄을 하나 더 쓰면 돼요. 맨 앞에 # 이 있는 줄은 무시돼요.
+#  - 매일 한국 시간 00시에 이 파일의 숫자로 그날 기록이 확정돼요.
+#
+#  곡 목록: 가이섬 멜론 검색 기준 (2026-11-25 확인)
+#    · 이세계아이돌 38곡 (Inst. 포함)
+#    · 고세구 솔로 앨범 NO CAT, NO LIFE! 3곡
+#  제목이 같은 곡(MEMORY, Stargazers, ELEVATE)은 [앨범명]으로 구분했어요.
+#  곡별 멜론 링크는 data/songs.json 과 사이트 곡 표에서 바로 열 수 있어요.
+# ─────────────────────────────────────────────────────────────
+
+# ── RE : WIND (2021-12-17)
+이세계아이돌 | RE : WIND |
+이세계아이돌 | RE : WIND (Inst.) |
+
+# ── 겨울봄 (2022-03-11)
+이세계아이돌 | 겨울봄 |
+이세계아이돌 | 겨울봄 (Inst.) |
+
+# ── LOCKDOWN (2023-06-22)
+이세계아이돌 | LOCKDOWN |
+이세계아이돌 | LOCKDOWN (Inst.) |
+
+# ── Another World (2023-07-21)
+이세계아이돌 | Another World |
+이세계아이돌 | Another World (Inst.) |
+
+# ── KIDDING (2023-08-18)
+이세계아이돌 | KIDDING |
+이세계아이돌 | KIDDING (Inst.) |
+
+# ── 이세계 페스티벌 (2023-09-24)
+이세계아이돌 | OVER |
+이세계아이돌 | Superhero |
+이세계아이돌 | OVER (inst.) |
+이세계아이돌 | Superhero (inst.) |
+
+# ── SYZYGY (2025-03-20)
+이세계아이돌 | SYZYGY |
+이세계아이돌 | SYZYGY (Inst.) |
+
+# ── Misty Rainbow (2025-04-25)
+이세계아이돌 | Misty Rainbow |
+이세계아이돌 | Misty Rainbow (Inst.) |
+
+# ── Stargazers (2025-05-18)
+이세계아이돌 | Stargazers [Stargazers] |
+이세계아이돌 | ELEVATE [Stargazers] |
+이세계아이돌 | MEMORY [Stargazers] |
+이세계아이돌 | Stargazers (Inst.) |
+이세계아이돌 | ELEVATE (Inst.) |
+이세계아이돌 | MEMORY (Inst.) |
+
+# ── Be My Light (2025-11-03)
+이세계아이돌 | Be My Light |
+이세계아이돌 | Nameless |
+이세계아이돌 | Stargazers [Be My Light] |
+이세계아이돌 | ELEVATE [Be My Light] |
+이세계아이돌 | MEMORY [Be My Light] |
+이세계아이돌 | Be My Light (Inst.) |
+이세계아이돌 | Nameless (Inst.) |
+
+# ── 화이트 (White) (2025-12-19)
+이세계아이돌 | 화이트 (White) |
+
+# ── Smile For You (2026-06-19)
+이세계아이돌 | Smile For You |
+
+# ── Across Dimensions (2026-11-09)
+이세계아이돌 | 연애세포 (恋愛細胞) |
+이세계아이돌 | REBELS |
+이세계아이돌 | BACK 2 THE FUTURE |
+이세계아이돌 | ANTI-HERO |
+이세계아이돌 | Dream Residue |
+
+# ── 고세구 솔로 앨범: NO CAT, NO LIFE! (2026-09-28)
+고세구 《NO CAT, NO LIFE!》 | 고양이가 세상을 구한다! |
+고세구 《NO CAT, NO LIFE!》 | Your Turn |
+고세구 《NO CAT, NO LIFE!》 | PUMP JUMP BUMP |
