@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T17:13:36+09:00",
+ "generated_at": "2026-11-25T17:32:34+09:00",
  "confirmed_date": "2026-11-25",
  "only_pending": false,
- "pending_taken_at": "2026-11-25T17:13:36+09:00",
+ "pending_taken_at": "2026-11-25T17:32:34+09:00",
  "groups": [
   {
    "name": "이세계아이돌",
@@ -283,7 +283,19 @@
      "link": "https://www.melon.com/song/detail.htm?songId=600406673"
     }
    ],
-   "pending": null
+   "pending": null,
+   "goal": {
+    "label": "멜론 빌리언스 클럽",
+    "target": 1000000000,
+    "done": false,
+    "remaining": 364209974,
+    "progress": 0.635790026,
+    "passed": [],
+    "avg_daily": null,
+    "pace_days": null,
+    "days_left": null,
+    "eta_date": null
+   }
   },
   {
    "name": "고세구 《NO CAT, NO LIFE!》",
@@ -319,7 +331,8 @@
      "link": "https://www.melon.com/song/detail.htm?songId=603093103"
     }
    ],
-   "pending": null
+   "pending": null,
+   "goal": null
   }
  ]
 }
