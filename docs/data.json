@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T17:03:26+09:00",
+ "generated_at": "2026-11-25T17:13:36+09:00",
  "confirmed_date": "2026-11-25",
  "only_pending": false,
- "pending_taken_at": null,
+ "pending_taken_at": "2026-11-25T17:13:36+09:00",
  "groups": [
   {
    "name": "이세계아이돌",
