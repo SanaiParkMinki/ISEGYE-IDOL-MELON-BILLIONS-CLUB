@@ -290,6 +290,43 @@ def period_summary(points):
     }
 
 
+FRIDAY = 4  # 월=0 … 금=4
+
+
+def weekly_summary(points, song_points, song_titles):
+    """금요일~금요일을 1주로 본 상승량.
+    마지막 기록이 금요일이면 '지난 금 → 이번 금'(완료), 아니면 '지난 금 → 오늘'(진행 중)."""
+    if len(points) < 2:
+        return None
+    L = d(points[-1][0])
+    start = L - timedelta(days=7) if L.weekday() == FRIDAY else L - timedelta(days=(L.weekday() - FRIDAY) % 7)
+    # 시작 금요일 당일(또는 그 전) 기록을 기준으로, 없으면 그 뒤 첫 기록부터
+    base = next(((ds, v) for ds, v in reversed(points) if d(ds) <= start), None)
+    partial = base is None
+    if partial:
+        base = next(((ds, v) for ds, v in points if d(ds) > start), None)
+    if not base or d(base[0]) >= L:
+        return None
+    base_day = d(base[0])
+    prev_base = value_at(points, start - timedelta(days=7))
+    prev_gain = base[1] - prev_base if (not partial and prev_base is not None and d(base[0]) == start) else None
+    songs = []
+    for title in song_titles:
+        pts = song_points.get(title, [])
+        b = value_at(pts, base_day)
+        if pts and b is not None:
+            songs.append({"title": title, "gain": pts[-1][1] - b})
+    songs.sort(key=lambda x: x["gain"], reverse=True)
+    days = (L - base_day).days
+    return {
+        "start": start.isoformat(), "end": L.isoformat(), "base_date": base_day.isoformat(),
+        "complete": L.weekday() == FRIDAY and not partial and base_day == start,
+        "partial": partial or base_day != start, "days": days,
+        "gain": points[-1][1] - base[1], "per_day": round((points[-1][1] - base[1]) / days),
+        "prev_gain": prev_gain, "top": songs[:5],
+    }
+
+
 def build_site_data(snaps, now, site_url):
     meta = load_song_meta()
     goals = load_goals()
@@ -374,6 +411,8 @@ def build_site_data(snaps, now, site_url):
             "series": [{"date": s["date"], "at": s.get("input_at") or s["taken_at"], "total": s["totals"][name]}
                        for s in snaps if name in s["totals"]],
             "summary": period_summary(points),
+            "weekly": weekly_summary(points, {t: p for (gname, t), p in song_points.items() if gname == name},
+                                     [x["title"] for x in latest["songs"] if x["group"] == name]),
             "goal": compute_goal(goals.get(name), total, points),
             "albums": album_list, "inst_share": inst_total / total if total else 0,
             "focus": {"title": focus["title"], "next": focus["next"], "count": focus["count"]} if focus else None,
@@ -438,6 +477,17 @@ def send_discord(site, replaced):
             lines.append(txt)
         lines.append("")
     main = site["groups"][0] if site["groups"] else None
+    wk = main.get("weekly") if main else None
+    if wk and wk["complete"]:   # 금요일 기록이면 주간 결산 한 줄
+        s, e = date.fromisoformat(wk["start"]), date.fromisoformat(wk["end"])
+        line = f"📅 **주간 결산** ({s.month}/{s.day} 금 ~ {e.month}/{e.day} 금) **+{wk['gain']:,}회**"
+        if wk.get("prev_gain"):
+            ch = (wk["gain"] - wk["prev_gain"]) / wk["prev_gain"]
+            line += f" · 지난주 대비 {'▲' if ch >= 0 else '▼'}{abs(ch):.0%}"
+        lines.append(line)
+        if wk["top"]:
+            lines.append("　이번 주 TOP3: " + " · ".join(f"{x['title']} +{x['gain']:,}" for x in wk["top"][:3]))
+        lines.append("")
     if main:
         risers = sorted([s for s in main["songs"] if s["delta"]], key=lambda s: s["delta"], reverse=True)[:3]
         if risers:
