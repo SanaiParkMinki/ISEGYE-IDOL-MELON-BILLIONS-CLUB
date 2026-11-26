@@ -503,7 +503,7 @@ def send_discord(site, replaced):
         lines += [f"🎉 {e['text']}" for e in site["events"][:8]]
 
     payload = {
-        "username": "멜론 X 이세계아이돌 스트리밍 집계",
+        "username": "이세계아이돌 멜론 누적 스트리밍 알림",
         "embeds": [{
             "title": f"📊 {at.month}월 {at.day}일 {at.hour}시 기준 멜론 누적 스트리밍" + (" (수정)" if replaced else ""),
             "url": site.get("site_url") or None,

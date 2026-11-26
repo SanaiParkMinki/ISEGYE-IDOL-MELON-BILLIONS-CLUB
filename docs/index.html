@@ -832,7 +832,7 @@
     if (!current) return;
     dcBtn.disabled = true; setStatus("디스코드로 보내는 중…");
     const fd = new FormData();
-    fd.append("payload_json", JSON.stringify({ username: "멜론 X 이세계아이돌 스트리밍 집계", content: dcMessage() }));
+    fd.append("payload_json", JSON.stringify({ username: "이세계아이돌 멜론 누적 스트리밍 알림", content: dcMessage() }));
     fd.append("files[0]", current.blob, current.name);
     try {
       const r = await fetch(url, { method: "POST", body: fd });
