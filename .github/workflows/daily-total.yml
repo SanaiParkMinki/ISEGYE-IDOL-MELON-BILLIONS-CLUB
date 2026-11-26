@@ -1,18 +1,13 @@
-name: 매일 00시 누적 합계
+name: 누적 합계 갱신
 
 on:
-  # 매일 한국 시간 00:00 (= UTC 15:00) 에 그날 기록을 확정
-  schedule:
-    - cron: "0 15 * * *"
-  # input.txt 를 고치면 바로 미리보기 갱신 (기록은 00시에)
   push:
     branches: [main]
     paths: ["data/input.txt"]
-  # Actions 탭에서 직접 실행
   workflow_dispatch:
     inputs:
-      record:
-        description: "지금 숫자를 오늘 날짜 기록으로 바로 확정할까요? (처음 시작할 때만 체크)"
+      allow_decrease:
+        description: "줄어든 숫자도 그대로 기록 (멜론이 숫자를 정정했을 때만 체크)"
         type: boolean
         default: false
 
@@ -29,6 +24,8 @@ jobs:
     steps:
       - name: 저장소 내려받기
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 파이썬 준비
         uses: actions/setup-python@v5
@@ -36,12 +33,14 @@ jobs:
           python-version: "3.12"
 
       - name: 합계 계산
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.record }}" = "true" ]; then
-            python scripts/aggregate.py --mode record
-          else
-            python scripts/aggregate.py --mode preview
-          fi
+          INPUT_TIME=$(git log -1 --format=%cI -- data/input.txt)
+          echo "input.txt 마지막 수정 시각: $INPUT_TIME"
+          EXTRA=""
+          if [ "${{ inputs.allow_decrease }}" = "true" ]; then EXTRA="--allow-decrease"; fi
+          python scripts/aggregate.py --mode record --input-time "$INPUT_TIME" $EXTRA
 
       - name: 결과 저장
         run: |
