@@ -320,7 +320,7 @@ def weekly_summary(points, song_points, song_titles):
     days = (L - base_day).days
     return {
         "start": start.isoformat(), "end": L.isoformat(), "base_date": base_day.isoformat(),
-        "complete": L.weekday() == FRIDAY and not partial and base_day == start,
+        "complete": L.weekday() == FRIDAY,   # 금요일 기록이 들어오면 그 주는 끝 (시작이 금요일이 아니면 partial 로 표시)
         "partial": partial or base_day != start, "days": days,
         "gain": points[-1][1] - base[1], "per_day": round((points[-1][1] - base[1]) / days),
         "prev_gain": prev_gain, "top": songs[:5],
@@ -503,7 +503,7 @@ def send_discord(site, replaced):
         lines += [f"🎉 {e['text']}" for e in site["events"][:8]]
 
     payload = {
-        "username": "이세돌 멜론 집계",
+        "username": "멜론 X 이세계아이돌 스트리밍 집계",
         "embeds": [{
             "title": f"📊 {at.month}월 {at.day}일 {at.hour}시 기준 멜론 누적 스트리밍" + (" (수정)" if replaced else ""),
             "url": site.get("site_url") or None,
