@@ -456,7 +456,23 @@ def write_csv(snaps):
 
 # ───────────────────────── 디스코드 알림 ─────────────────────────
 
-def send_discord(site, replaced):
+def multipart(fields, files):
+    """디스코드에 사진을 붙여 보내기 위한 multipart/form-data 본문 만들기 (기본 기능만 사용)"""
+    boundary = "----isedol" + os.urandom(8).hex()
+    out = bytearray()
+    for name, value in fields.items():
+        out += f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n'.encode()
+        out += b"Content-Type: application/json\r\n\r\n" + value.encode("utf-8") + b"\r\n"
+    for i, (fname, data) in enumerate(files):
+        out += f'--{boundary}\r\nContent-Disposition: form-data; name="files[{i}]"; filename="{fname}"\r\n'.encode()
+        out += b"Content-Type: image/png\r\n\r\n" + data + b"\r\n"
+    out += f"--{boundary}--\r\n".encode()
+    return bytes(out), f"multipart/form-data; boundary={boundary}"
+
+
+def send_discord(site, images=None):
+    """images: [(파일이름, PNG 바이트, 제목)] — 있으면 글과 같이 사진으로 붙여 보냄. 사이트 링크는 넣지 않음."""
+    replaced = site.get("replaced", False)
     url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
     if not url:
         print("ℹ️  디스코드 웹후크 주소가 없어서 알림은 건너뛰었어요.")
@@ -502,21 +518,30 @@ def send_discord(site, replaced):
         lines.append("")
         lines += [f"🎉 {e['text']}" for e in site["events"][:8]]
 
-    payload = {
-        "username": "이세계아이돌 멜론 누적 스트리밍 알림",
-        "embeds": [{
-            "title": f"📊 {at.month}월 {at.day}일 {at.hour}시 기준 멜론 누적 스트리밍" + (" (수정)" if replaced else ""),
-            "url": site.get("site_url") or None,
-            "description": "\n".join(lines).strip()[:4000],
-            "color": 0x52D1F9,
-        }],
-    }
-    req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), method="POST",
-                                 headers={"Content-Type": "application/json",
-                                          "User-Agent": "isedol-melon-total (GitHub Actions)"})
+    images = images or []
+    embeds = [{
+        "title": f"📊 {at.month}월 {at.day}일 {at.hour}시 기준 멜론 누적 스트리밍" + (" (수정)" if replaced else ""),
+        "description": "\n".join(lines).strip()[:4000],
+        "color": 0x52D1F9,
+    }]
+    for i, (fname, _, title) in enumerate(images):   # 첫 사진은 글 카드 안에, 나머지는 카드를 하나씩 더 만들어서
+        if i == 0:
+            embeds[0]["image"] = {"url": f"attachment://{fname}"}
+        else:
+            embeds.append({"title": title, "image": {"url": f"attachment://{fname}"}, "color": 0xF986BD})
+    payload = {"username": "이세계아이돌 멜론 누적 스트리밍 알림", "embeds": embeds}
+
+    headers = {"User-Agent": "isedol-melon-total (GitHub Actions)"}
+    if images:
+        body, ctype = multipart({"payload_json": json.dumps(payload, ensure_ascii=False)},
+                                [(f, data) for f, data, _ in images])
+    else:
+        body, ctype = json.dumps(payload).encode("utf-8"), "application/json"
+    headers["Content-Type"] = ctype
+    req = urllib.request.Request(url, data=body, method="POST", headers=headers)
     try:
-        urllib.request.urlopen(req, timeout=15).read()
-        print("✅ 디스코드에 알림을 보냈어요.")
+        urllib.request.urlopen(req, timeout=30).read()
+        print(f"✅ 디스코드에 알림을 보냈어요. (사진 {len(images)}장)")
     except Exception as e:  # 알림 실패는 기록 저장을 막지 않음
         print(f"⚠️  디스코드 알림을 보내지 못했어요: {e}")
 
@@ -557,6 +582,7 @@ def main():
     repo = os.environ.get("GITHUB_REPOSITORY", "")
     site_url = f"https://{repo.split('/')[0].lower()}.github.io/{repo.split('/')[1]}/" if "/" in repo else ""
     site = build_site_data(snaps, now, site_url)
+    site["replaced"] = replaced   # 같은 날 다시 저장한 경우 (디스코드 제목에 '(수정)')
 
     if args.mode == "record":
         HISTORY_FILE.write_text(json.dumps({"snapshots": snaps}, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -570,9 +596,7 @@ def main():
         print(f"   {name}: {total:,}회")
     for e in site["events"]:
         print(f"   🎉 {e['text']}")
-
-    if args.mode == "record":
-        send_discord(site, replaced)
+    # 디스코드 알림은 공유 이미지를 만든 뒤 scripts/notify_discord.py 가 보냄
 
 
 if __name__ == "__main__":
