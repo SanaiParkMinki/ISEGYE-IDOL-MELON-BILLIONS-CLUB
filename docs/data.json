@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-27T02:06:14+09:00",
- "confirmed_date": "2026-11-26",
- "basis_at": "2026-11-26T19:00:33+09:00",
+ "generated_at": "2026-11-27T18:47:49+09:00",
+ "confirmed_date": "2026-11-27",
+ "basis_at": "2026-11-27T18:47:42+09:00",
  "site_url": "https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/",
  "events": [
   {
    "group": "이세계아이돌",
-   "title": "연애세포 (恋愛細胞)",
-   "target": 5000000,
-   "text": "「연애세포 (恋愛細胞)」 500만 회 돌파!"
+   "title": "KIDDING",
+   "target": 80000000,
+   "text": "「KIDDING」 8천만 회 돌파!"
   }
  ],
  "releases": [
@@ -86,12 +86,12 @@
  "groups": [
   {
    "name": "이세계아이돌",
-   "total": 637184968,
-   "prev_total": 635790026,
-   "prev_date": "2026-11-25",
+   "total": 638551101,
+   "prev_total": 637184968,
+   "prev_date": "2026-11-26",
    "gap_days": 1,
-   "delta": 1394942,
-   "delta_per_day": 1394942,
+   "delta": 1366133,
+   "delta_per_day": 1366133,
    "series": [
     {
      "date": "2026-11-25",
@@ -102,6 +102,11 @@
      "date": "2026-11-26",
      "at": "2026-11-26T19:00:33+09:00",
      "total": 637184968
+    },
+    {
+     "date": "2026-11-27",
+     "at": "2026-11-27T18:47:42+09:00",
+     "total": 638551101
     }
    ],
    "summary": {
@@ -114,34 +119,34 @@
    },
    "weekly": {
     "start": "2026-11-20",
-    "end": "2026-11-26",
+    "end": "2026-11-27",
     "base_date": "2026-11-25",
-    "complete": false,
+    "complete": true,
     "partial": true,
-    "days": 1,
-    "gain": 1394942,
-    "per_day": 1394942,
+    "days": 2,
+    "gain": 2761075,
+    "per_day": 1380538,
     "prev_gain": null,
     "top": [
      {
       "title": "REBELS",
-      "gain": 391696
+      "gain": 780391
      },
      {
       "title": "KIDDING",
-      "gain": 295461
+      "gain": 582975
      },
      {
       "title": "연애세포 (恋愛細胞)",
-      "gain": 118344
+      "gain": 234772
      },
      {
       "title": "ANTI-HERO",
-      "gain": 104625
+      "gain": 206895
      },
      {
       "title": "BACK 2 THE FUTURE",
-      "gain": 104104
+      "gain": 206219
      }
     ]
    },
@@ -149,131 +154,131 @@
     "label": "멜론 빌리언스 클럽",
     "target": 1000000000,
     "done": false,
-    "remaining": 362815032,
-    "progress": 0.637184968,
+    "remaining": 361448899,
+    "progress": 0.638551101,
     "passed": [],
-    "avg_daily": 1394942,
-    "pace_days": 1,
-    "days_left": 261,
-    "eta_date": "2027-08-14"
+    "avg_daily": 1380538,
+    "pace_days": 2,
+    "days_left": 262,
+    "eta_date": "2027-08-16"
    },
    "albums": [
     {
      "album": "이세계 페스티벌",
      "released": "2023-09-24",
-     "total": 96213468,
-     "inst_total": 10180814,
+     "total": 96215035,
+     "inst_total": 10180922,
      "songs": 4,
-     "share": 0.15099770526915507
+     "share": 0.15067711080495028
     },
     {
      "album": "KIDDING",
      "released": "2023-08-18",
-     "total": 85986068,
-     "inst_total": 6201952,
+     "total": 86273652,
+     "inst_total": 6202022,
      "songs": 2,
-     "share": 0.13494679303231774
+     "share": 0.13510845391213255
     },
     {
      "album": "Be My Light",
      "released": "2025-11-03",
-     "total": 72881828,
-     "inst_total": 267512,
+     "total": 73027672,
+     "inst_total": 267661,
      "songs": 7,
-     "share": 0.11438095947046886
+     "share": 0.11436464816306065
     },
     {
      "album": "RE : WIND",
      "released": "2021-12-17",
-     "total": 72652934,
-     "inst_total": 8400336,
+     "total": 72657007,
+     "inst_total": 8400402,
      "songs": 2,
-     "share": 0.11402173254030688
+     "share": 0.1137841699532204
     },
     {
      "album": "LOCKDOWN",
      "released": "2023-06-22",
-     "total": 62123632,
-     "inst_total": 9913659,
+     "total": 62125038,
+     "inst_total": 9913720,
      "songs": 2,
-     "share": 0.09749701439912185
+     "share": 0.09729062858510364
     },
     {
      "album": "겨울봄",
      "released": "2022-03-11",
-     "total": 58071669,
-     "inst_total": 7554307,
+     "total": 58072998,
+     "inst_total": 7554366,
      "songs": 2,
-     "share": 0.09113785151315748
+     "share": 0.09094495007377648
     },
     {
      "album": "Another World",
      "released": "2023-07-21",
-     "total": 51205482,
-     "inst_total": 8808299,
+     "total": 51206434,
+     "inst_total": 8808361,
      "songs": 2,
-     "share": 0.08036203704039672
+     "share": 0.08019159926246842
     },
     {
      "album": "Stargazers",
      "released": "2025-05-18",
-     "total": 47413554,
-     "inst_total": 2172125,
+     "total": 47418715,
+     "inst_total": 2172311,
      "songs": 6,
-     "share": 0.074410973863401
+     "share": 0.07425985943135975
     },
     {
      "album": "Across Dimensions",
      "released": "2026-11-09",
-     "total": 22959260,
+     "total": 23761219,
      "inst_total": 0,
      "songs": 5,
-     "share": 0.03603233150974145
+     "share": 0.03721114717802358
     },
     {
      "album": "Misty Rainbow",
      "released": "2025-04-25",
-     "total": 20808413,
-     "inst_total": 1383940,
+     "total": 20811019,
+     "inst_total": 1384002,
      "songs": 2,
-     "share": 0.03265678577652824
+     "share": 0.03259100010540895
     },
     {
      "album": "화이트 (White)",
      "released": "2025-12-19",
-     "total": 17969752,
+     "total": 18028209,
      "inst_total": 0,
      "songs": 1,
-     "share": 0.028201782688633673
+     "share": 0.02823299336852917
     },
     {
      "album": "SYZYGY",
      "released": "2025-03-20",
-     "total": 15428056,
-     "inst_total": 1866322,
+     "total": 15428881,
+     "inst_total": 1866385,
      "songs": 2,
-     "share": 0.024212837362478395
+     "share": 0.024162327769598504
     },
     {
      "album": "Smile For You",
      "released": "2026-06-19",
-     "total": 13470852,
+     "total": 13525222,
      "inst_total": 0,
      "songs": 1,
-     "share": 0.021141195534292643
+     "share": 0.02118111139236764
     }
    ],
-   "inst_share": 0.08906246827844187,
+   "inst_share": 0.08887331321037062,
    "focus": {
-    "title": "KIDDING",
+    "title": "REBELS",
     "next": {
-     "target": 80000000,
-     "label": "8천만",
-     "remaining": 215884,
+     "target": 8000000,
+     "label": "800만",
+     "remaining": 156341,
      "days": 1,
-     "eta": "2026-11-27"
+     "eta": "2026-11-28"
     },
-    "count": 79784116
+    "count": 7843659
    },
    "songs": [
     {
@@ -283,18 +288,18 @@
      "released": "2021-12-17",
      "link": "https://www.melon.com/song/detail.htm?songId=34421197",
      "inst": false,
-     "count": 64252598,
-     "prev_count": 64248519,
+     "count": 64256605,
+     "prev_count": 64252598,
      "carried": false,
-     "delta": 4079,
-     "delta_per_day": 4079,
-     "avg_daily": 4079,
+     "delta": 4007,
+     "delta_per_day": 4007,
+     "avg_daily": 4043,
      "next": {
       "target": 70000000,
       "label": "7천만",
-      "remaining": 5747402,
-      "days": 1410,
-      "eta": "2030-10-06"
+      "remaining": 5743395,
+      "days": 1421,
+      "eta": "2030-10-18"
      }
     },
     {
@@ -304,18 +309,18 @@
      "released": "2021-12-17",
      "link": "https://www.melon.com/song/detail.htm?songId=34421198",
      "inst": true,
-     "count": 8400336,
-     "prev_count": 8400262,
+     "count": 8400402,
+     "prev_count": 8400336,
      "carried": false,
-     "delta": 74,
-     "delta_per_day": 74,
-     "avg_daily": 74,
+     "delta": 66,
+     "delta_per_day": 66,
+     "avg_daily": 70,
      "next": {
       "target": 9000000,
       "label": "900만",
-      "remaining": 599664,
-      "days": 8104,
-      "eta": "2049-02-02"
+      "remaining": 599598,
+      "days": 8566,
+      "eta": "2050-05-11"
      }
     },
     {
@@ -325,18 +330,18 @@
      "released": "2022-03-11",
      "link": "https://www.melon.com/song/detail.htm?songId=34748940",
      "inst": false,
-     "count": 50517362,
-     "prev_count": 50516129,
+     "count": 50518632,
+     "prev_count": 50517362,
      "carried": false,
-     "delta": 1233,
-     "delta_per_day": 1233,
-     "avg_daily": 1233,
+     "delta": 1270,
+     "delta_per_day": 1270,
+     "avg_daily": 1252,
      "next": {
       "target": 60000000,
       "label": "6천만",
-      "remaining": 9482638,
-      "days": 7691,
-      "eta": "2047-12-17"
+      "remaining": 9481368,
+      "days": 7580,
+      "eta": "2047-08-29"
      }
     },
     {
@@ -346,18 +351,18 @@
      "released": "2022-03-11",
      "link": "https://www.melon.com/song/detail.htm?songId=34748941",
      "inst": true,
-     "count": 7554307,
-     "prev_count": 7554241,
+     "count": 7554366,
+     "prev_count": 7554307,
      "carried": false,
-     "delta": 66,
-     "delta_per_day": 66,
-     "avg_daily": 66,
+     "delta": 59,
+     "delta_per_day": 59,
+     "avg_daily": 62,
      "next": {
       "target": 8000000,
       "label": "800만",
-      "remaining": 445693,
-      "days": 6753,
-      "eta": "2045-05-23"
+      "remaining": 445634,
+      "days": 7188,
+      "eta": "2046-08-02"
      }
     },
     {
@@ -367,18 +372,18 @@
      "released": "2023-06-22",
      "link": "https://www.melon.com/song/detail.htm?songId=36549241",
      "inst": false,
-     "count": 52209973,
-     "prev_count": 52208571,
+     "count": 52211318,
+     "prev_count": 52209973,
      "carried": false,
-     "delta": 1402,
-     "delta_per_day": 1402,
-     "avg_daily": 1402,
+     "delta": 1345,
+     "delta_per_day": 1345,
+     "avg_daily": 1374,
      "next": {
       "target": 60000000,
       "label": "6천만",
-      "remaining": 7790027,
-      "days": 5557,
-      "eta": "2042-02-12"
+      "remaining": 7788682,
+      "days": 5673,
+      "eta": "2042-06-09"
      }
     },
     {
@@ -388,18 +393,18 @@
      "released": "2023-06-22",
      "link": "https://www.melon.com/song/detail.htm?songId=36549242",
      "inst": true,
-     "count": 9913659,
-     "prev_count": 9913591,
+     "count": 9913720,
+     "prev_count": 9913659,
      "carried": false,
-     "delta": 68,
-     "delta_per_day": 68,
-     "avg_daily": 68,
+     "delta": 61,
+     "delta_per_day": 61,
+     "avg_daily": 64,
      "next": {
       "target": 10000000,
       "label": "1천만",
-      "remaining": 86341,
-      "days": 1270,
-      "eta": "2030-05-19"
+      "remaining": 86280,
+      "days": 1349,
+      "eta": "2030-08-07"
      }
     },
     {
@@ -409,18 +414,18 @@
      "released": "2023-07-21",
      "link": "https://www.melon.com/song/detail.htm?songId=36634860",
      "inst": false,
-     "count": 42397183,
-     "prev_count": 42396251,
+     "count": 42398073,
+     "prev_count": 42397183,
      "carried": false,
-     "delta": 932,
-     "delta_per_day": 932,
-     "avg_daily": 932,
+     "delta": 890,
+     "delta_per_day": 890,
+     "avg_daily": 911,
      "next": {
       "target": 50000000,
       "label": "5천만",
-      "remaining": 7602817,
-      "days": 8158,
-      "eta": "2049-03-28"
+      "remaining": 7601927,
+      "days": 8345,
+      "eta": "2049-10-02"
      }
     },
     {
@@ -430,18 +435,18 @@
      "released": "2023-07-21",
      "link": "https://www.melon.com/song/detail.htm?songId=36634861",
      "inst": true,
-     "count": 8808299,
-     "prev_count": 8808227,
+     "count": 8808361,
+     "prev_count": 8808299,
      "carried": false,
-     "delta": 72,
-     "delta_per_day": 72,
-     "avg_daily": 72,
+     "delta": 62,
+     "delta_per_day": 62,
+     "avg_daily": 67,
      "next": {
       "target": 9000000,
       "label": "900만",
-      "remaining": 191701,
-      "days": 2663,
-      "eta": "2034-03-12"
+      "remaining": 191639,
+      "days": 2861,
+      "eta": "2034-09-27"
      }
     },
     {
@@ -451,18 +456,18 @@
      "released": "2023-08-18",
      "link": "https://www.melon.com/song/detail.htm?songId=36710003",
      "inst": false,
-     "count": 79784116,
-     "prev_count": 79488655,
+     "count": 80071630,
+     "prev_count": 79784116,
      "carried": false,
-     "delta": 295461,
-     "delta_per_day": 295461,
-     "avg_daily": 295461,
+     "delta": 287514,
+     "delta_per_day": 287514,
+     "avg_daily": 291488,
      "next": {
-      "target": 80000000,
-      "label": "8천만",
-      "remaining": 215884,
-      "days": 1,
-      "eta": "2026-11-27"
+      "target": 90000000,
+      "label": "9천만",
+      "remaining": 9928370,
+      "days": 35,
+      "eta": "2027-01-01"
      }
     },
     {
@@ -472,18 +477,18 @@
      "released": "2023-08-18",
      "link": "https://www.melon.com/song/detail.htm?songId=36710004",
      "inst": true,
-     "count": 6201952,
-     "prev_count": 6201880,
+     "count": 6202022,
+     "prev_count": 6201952,
      "carried": false,
-     "delta": 72,
-     "delta_per_day": 72,
-     "avg_daily": 72,
+     "delta": 70,
+     "delta_per_day": 70,
+     "avg_daily": 71,
      "next": {
       "target": 7000000,
       "label": "700만",
-      "remaining": 798048,
-      "days": 11084,
-      "eta": "2057-04-01"
+      "remaining": 797978,
+      "days": 11240,
+      "eta": "2057-09-05"
      }
     },
     {
@@ -493,18 +498,18 @@
      "released": "2023-09-24",
      "link": "https://www.melon.com/song/detail.htm?songId=36820644",
      "inst": false,
-     "count": 43256233,
-     "prev_count": 43255464,
+     "count": 43256962,
+     "prev_count": 43256233,
      "carried": false,
-     "delta": 769,
-     "delta_per_day": 769,
-     "avg_daily": 769,
+     "delta": 729,
+     "delta_per_day": 729,
+     "avg_daily": 749,
      "next": {
       "target": 50000000,
       "label": "5천만",
-      "remaining": 6743767,
-      "days": 8770,
-      "eta": "2050-11-30"
+      "remaining": 6743038,
+      "days": 9003,
+      "eta": "2051-07-22"
      }
     },
     {
@@ -514,18 +519,18 @@
      "released": "2023-09-24",
      "link": "https://www.melon.com/song/detail.htm?songId=36820645",
      "inst": false,
-     "count": 42776421,
-     "prev_count": 42775689,
+     "count": 42777151,
+     "prev_count": 42776421,
      "carried": false,
-     "delta": 732,
-     "delta_per_day": 732,
-     "avg_daily": 732,
+     "delta": 730,
+     "delta_per_day": 730,
+     "avg_daily": 731,
      "next": {
       "target": 50000000,
       "label": "5천만",
-      "remaining": 7223579,
-      "days": 9869,
-      "eta": "2053-12-03"
+      "remaining": 7222849,
+      "days": 9881,
+      "eta": "2053-12-16"
      }
     },
     {
@@ -535,18 +540,18 @@
      "released": "2023-09-24",
      "link": "https://www.melon.com/song/detail.htm?songId=36820646",
      "inst": true,
-     "count": 5112876,
-     "prev_count": 5112808,
+     "count": 5112932,
+     "prev_count": 5112876,
      "carried": false,
-     "delta": 68,
-     "delta_per_day": 68,
-     "avg_daily": 68,
+     "delta": 56,
+     "delta_per_day": 56,
+     "avg_daily": 62,
      "next": {
       "target": 6000000,
       "label": "600만",
-      "remaining": 887124,
-      "days": 13046,
-      "eta": "2062-08-15"
+      "remaining": 887068,
+      "days": 14308,
+      "eta": "2066-01-29"
      }
     },
     {
@@ -556,18 +561,18 @@
      "released": "2023-09-24",
      "link": "https://www.melon.com/song/detail.htm?songId=36820647",
      "inst": true,
-     "count": 5067938,
-     "prev_count": 5067870,
+     "count": 5067990,
+     "prev_count": 5067938,
      "carried": false,
-     "delta": 68,
-     "delta_per_day": 68,
-     "avg_daily": 68,
+     "delta": 52,
+     "delta_per_day": 52,
+     "avg_daily": 60,
      "next": {
       "target": 6000000,
       "label": "600만",
-      "remaining": 932062,
-      "days": 13707,
-      "eta": "2064-06-06"
+      "remaining": 932010,
+      "days": 15534,
+      "eta": "2069-06-08"
      }
     },
     {
@@ -577,18 +582,18 @@
      "released": "2025-03-20",
      "link": "https://www.melon.com/song/detail.htm?songId=38684087",
      "inst": false,
-     "count": 13561734,
-     "prev_count": 13560934,
+     "count": 13562496,
+     "prev_count": 13561734,
      "carried": false,
-     "delta": 800,
-     "delta_per_day": 800,
-     "avg_daily": 800,
+     "delta": 762,
+     "delta_per_day": 762,
+     "avg_daily": 781,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 6438266,
-      "days": 8048,
-      "eta": "2048-12-08"
+      "remaining": 6437504,
+      "days": 8243,
+      "eta": "2049-06-22"
      }
     },
     {
@@ -598,18 +603,18 @@
      "released": "2025-03-20",
      "link": "https://www.melon.com/song/detail.htm?songId=38684088",
      "inst": true,
-     "count": 1866322,
-     "prev_count": 1866254,
+     "count": 1866385,
+     "prev_count": 1866322,
      "carried": false,
-     "delta": 68,
-     "delta_per_day": 68,
-     "avg_daily": 68,
+     "delta": 63,
+     "delta_per_day": 63,
+     "avg_daily": 66,
      "next": {
       "target": 2000000,
       "label": "200만",
-      "remaining": 133678,
-      "days": 1966,
-      "eta": "2032-04-14"
+      "remaining": 133615,
+      "days": 2056,
+      "eta": "2032-07-14"
      }
     },
     {
@@ -619,18 +624,18 @@
      "released": "2025-04-25",
      "link": "https://www.melon.com/song/detail.htm?songId=38852970",
      "inst": false,
-     "count": 19424473,
-     "prev_count": 19421676,
+     "count": 19427017,
+     "prev_count": 19424473,
      "carried": false,
-     "delta": 2797,
-     "delta_per_day": 2797,
-     "avg_daily": 2797,
+     "delta": 2544,
+     "delta_per_day": 2544,
+     "avg_daily": 2670,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 575527,
-      "days": 206,
-      "eta": "2027-06-20"
+      "remaining": 572983,
+      "days": 215,
+      "eta": "2027-06-30"
      }
     },
     {
@@ -640,18 +645,18 @@
      "released": "2025-04-25",
      "link": "https://www.melon.com/song/detail.htm?songId=38852971",
      "inst": true,
-     "count": 1383940,
-     "prev_count": 1383870,
+     "count": 1384002,
+     "prev_count": 1383940,
      "carried": false,
-     "delta": 70,
-     "delta_per_day": 70,
-     "avg_daily": 70,
+     "delta": 62,
+     "delta_per_day": 62,
+     "avg_daily": 66,
      "next": {
       "target": 2000000,
       "label": "200만",
-      "remaining": 616060,
-      "days": 8801,
-      "eta": "2050-12-31"
+      "remaining": 615998,
+      "days": 9334,
+      "eta": "2052-06-17"
      }
     },
     {
@@ -661,18 +666,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958780",
      "inst": false,
-     "count": 17731259,
-     "prev_count": 17728335,
+     "count": 17733990,
+     "prev_count": 17731259,
      "carried": false,
-     "delta": 2924,
-     "delta_per_day": 2924,
-     "avg_daily": 2924,
+     "delta": 2731,
+     "delta_per_day": 2731,
+     "avg_daily": 2828,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 2268741,
-      "days": 776,
-      "eta": "2029-01-10"
+      "remaining": 2266010,
+      "days": 802,
+      "eta": "2029-02-06"
      }
     },
     {
@@ -682,18 +687,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958781",
      "inst": false,
-     "count": 13754143,
-     "prev_count": 13753025,
+     "count": 13755203,
+     "prev_count": 13754143,
      "carried": false,
-     "delta": 1118,
-     "delta_per_day": 1118,
-     "avg_daily": 1118,
+     "delta": 1060,
+     "delta_per_day": 1060,
+     "avg_daily": 1089,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 6245857,
-      "days": 5587,
-      "eta": "2042-03-14"
+      "remaining": 6244797,
+      "days": 5735,
+      "eta": "2042-08-10"
      }
     },
     {
@@ -703,18 +708,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958782",
      "inst": false,
-     "count": 13756027,
-     "prev_count": 13754744,
+     "count": 13757211,
+     "prev_count": 13756027,
      "carried": false,
-     "delta": 1283,
-     "delta_per_day": 1283,
-     "avg_daily": 1283,
+     "delta": 1184,
+     "delta_per_day": 1184,
+     "avg_daily": 1234,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 6243973,
-      "days": 4867,
-      "eta": "2040-03-24"
+      "remaining": 6242789,
+      "days": 5064,
+      "eta": "2040-10-08"
      }
     },
     {
@@ -724,18 +729,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958783",
      "inst": true,
-     "count": 733655,
-     "prev_count": 733591,
+     "count": 733710,
+     "prev_count": 733655,
      "carried": false,
-     "delta": 64,
-     "delta_per_day": 64,
-     "avg_daily": 64,
+     "delta": 55,
+     "delta_per_day": 55,
+     "avg_daily": 60,
      "next": {
       "target": 800000,
       "label": "80만",
-      "remaining": 66345,
-      "days": 1037,
-      "eta": "2029-09-28"
+      "remaining": 66290,
+      "days": 1124,
+      "eta": "2029-12-25"
      }
     },
     {
@@ -745,18 +750,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958784",
      "inst": true,
-     "count": 720477,
-     "prev_count": 720405,
+     "count": 720541,
+     "prev_count": 720477,
      "carried": false,
-     "delta": 72,
-     "delta_per_day": 72,
-     "avg_daily": 72,
+     "delta": 64,
+     "delta_per_day": 64,
+     "avg_daily": 68,
      "next": {
       "target": 800000,
       "label": "80만",
-      "remaining": 79523,
-      "days": 1105,
-      "eta": "2029-12-05"
+      "remaining": 79459,
+      "days": 1169,
+      "eta": "2030-02-08"
      }
     },
     {
@@ -766,18 +771,18 @@
      "released": "2025-05-18",
      "link": "https://www.melon.com/song/detail.htm?songId=38958785",
      "inst": true,
-     "count": 717993,
-     "prev_count": 717912,
+     "count": 718060,
+     "prev_count": 717993,
      "carried": false,
-     "delta": 81,
-     "delta_per_day": 81,
-     "avg_daily": 81,
+     "delta": 67,
+     "delta_per_day": 67,
+     "avg_daily": 74,
      "next": {
       "target": 800000,
       "label": "80만",
-      "remaining": 82007,
-      "days": 1013,
-      "eta": "2029-09-04"
+      "remaining": 81940,
+      "days": 1108,
+      "eta": "2029-12-09"
      }
     },
     {
@@ -787,18 +792,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406667",
      "inst": false,
-     "count": 23761083,
-     "prev_count": 23688149,
+     "count": 23832189,
+     "prev_count": 23761083,
      "carried": false,
-     "delta": 72934,
-     "delta_per_day": 72934,
-     "avg_daily": 72934,
+     "delta": 71106,
+     "delta_per_day": 71106,
+     "avg_daily": 72020,
      "next": {
       "target": 30000000,
       "label": "3천만",
-      "remaining": 6238917,
+      "remaining": 6167811,
       "days": 86,
-      "eta": "2027-02-20"
+      "eta": "2027-02-21"
      }
     },
     {
@@ -808,18 +813,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406668",
      "inst": false,
-     "count": 21553278,
-     "prev_count": 21478877,
+     "count": 21625671,
+     "prev_count": 21553278,
      "carried": false,
-     "delta": 74401,
-     "delta_per_day": 74401,
-     "avg_daily": 74401,
+     "delta": 72393,
+     "delta_per_day": 72393,
+     "avg_daily": 73397,
      "next": {
       "target": 30000000,
       "label": "3천만",
-      "remaining": 8446722,
-      "days": 114,
-      "eta": "2027-03-20"
+      "remaining": 8374329,
+      "days": 115,
+      "eta": "2027-03-22"
      }
     },
     {
@@ -829,18 +834,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406669",
      "inst": false,
-     "count": 10537463,
-     "prev_count": 10536685,
+     "count": 10538259,
+     "prev_count": 10537463,
      "carried": false,
-     "delta": 778,
-     "delta_per_day": 778,
-     "avg_daily": 778,
+     "delta": 796,
+     "delta_per_day": 796,
+     "avg_daily": 787,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 9462537,
-      "days": 12163,
-      "eta": "2060-03-15"
+      "remaining": 9461741,
+      "days": 12023,
+      "eta": "2059-10-28"
      }
     },
     {
@@ -850,18 +855,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406670",
      "inst": false,
-     "count": 8618583,
-     "prev_count": 8617971,
+     "count": 8619223,
+     "prev_count": 8618583,
      "carried": false,
-     "delta": 612,
-     "delta_per_day": 612,
-     "avg_daily": 612,
+     "delta": 640,
+     "delta_per_day": 640,
+     "avg_daily": 626,
      "next": {
       "target": 9000000,
       "label": "900만",
-      "remaining": 381417,
-      "days": 624,
-      "eta": "2028-08-11"
+      "remaining": 380777,
+      "days": 609,
+      "eta": "2028-07-28"
      }
     },
     {
@@ -871,18 +876,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406671",
      "inst": false,
-     "count": 8143909,
-     "prev_count": 8143241,
+     "count": 8144669,
+     "prev_count": 8143909,
      "carried": false,
-     "delta": 668,
-     "delta_per_day": 668,
-     "avg_daily": 668,
+     "delta": 760,
+     "delta_per_day": 760,
+     "avg_daily": 714,
      "next": {
       "target": 9000000,
       "label": "900만",
-      "remaining": 856091,
-      "days": 1282,
-      "eta": "2030-05-31"
+      "remaining": 855331,
+      "days": 1198,
+      "eta": "2030-03-09"
      }
     },
     {
@@ -892,18 +897,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406672",
      "inst": true,
-     "count": 134280,
-     "prev_count": 134198,
+     "count": 134357,
+     "prev_count": 134280,
      "carried": false,
-     "delta": 82,
-     "delta_per_day": 82,
-     "avg_daily": 82,
+     "delta": 77,
+     "delta_per_day": 77,
+     "avg_daily": 80,
      "next": {
       "target": 200000,
       "label": "20만",
-      "remaining": 65720,
-      "days": 802,
-      "eta": "2029-02-05"
+      "remaining": 65643,
+      "days": 831,
+      "eta": "2029-03-07"
      }
     },
     {
@@ -913,18 +918,18 @@
      "released": "2025-11-03",
      "link": "https://www.melon.com/song/detail.htm?songId=600406673",
      "inst": true,
-     "count": 133232,
-     "prev_count": 133150,
+     "count": 133304,
+     "prev_count": 133232,
      "carried": false,
-     "delta": 82,
-     "delta_per_day": 82,
-     "avg_daily": 82,
+     "delta": 72,
+     "delta_per_day": 72,
+     "avg_daily": 77,
      "next": {
       "target": 200000,
       "label": "20만",
-      "remaining": 66768,
-      "days": 815,
-      "eta": "2029-02-18"
+      "remaining": 66696,
+      "days": 867,
+      "eta": "2029-04-12"
      }
     },
     {
@@ -934,18 +939,18 @@
      "released": "2025-12-19",
      "link": "https://www.melon.com/song/detail.htm?songId=600740747",
      "inst": false,
-     "count": 17969752,
-     "prev_count": 17907315,
+     "count": 18028209,
+     "prev_count": 17969752,
      "carried": false,
-     "delta": 62437,
-     "delta_per_day": 62437,
-     "avg_daily": 62437,
+     "delta": 58457,
+     "delta_per_day": 58457,
+     "avg_daily": 60447,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 2030248,
+      "remaining": 1971791,
       "days": 33,
-      "eta": "2026-12-29"
+      "eta": "2026-12-30"
      }
     },
     {
@@ -955,18 +960,18 @@
      "released": "2026-06-19",
      "link": "https://www.melon.com/song/detail.htm?songId=602294070",
      "inst": false,
-     "count": 13470852,
-     "prev_count": 13415026,
+     "count": 13525222,
+     "prev_count": 13470852,
      "carried": false,
-     "delta": 55826,
-     "delta_per_day": 55826,
-     "avg_daily": 55826,
+     "delta": 54370,
+     "delta_per_day": 54370,
+     "avg_daily": 55098,
      "next": {
       "target": 20000000,
       "label": "2천만",
-      "remaining": 6529148,
-      "days": 117,
-      "eta": "2027-03-23"
+      "remaining": 6474778,
+      "days": 118,
+      "eta": "2027-03-25"
      }
     },
     {
@@ -976,17 +981,17 @@
      "released": "2026-11-09",
      "link": "https://www.melon.com/song/detail.htm?songId=603813507",
      "inst": false,
-     "count": 5040764,
-     "prev_count": 4922420,
+     "count": 5157192,
+     "prev_count": 5040764,
      "carried": false,
-     "delta": 118344,
-     "delta_per_day": 118344,
-     "avg_daily": 118344,
+     "delta": 116428,
+     "delta_per_day": 116428,
+     "avg_daily": 117386,
      "next": {
       "target": 6000000,
       "label": "600만",
-      "remaining": 959236,
-      "days": 9,
+      "remaining": 842808,
+      "days": 8,
       "eta": "2026-12-05"
      }
     },
@@ -997,17 +1002,17 @@
      "released": "2026-11-09",
      "link": "https://www.melon.com/song/detail.htm?songId=603813508",
      "inst": false,
-     "count": 7454964,
-     "prev_count": 7063268,
+     "count": 7843659,
+     "prev_count": 7454964,
      "carried": false,
-     "delta": 391696,
-     "delta_per_day": 391696,
-     "avg_daily": 391696,
+     "delta": 388695,
+     "delta_per_day": 388695,
+     "avg_daily": 390196,
      "next": {
       "target": 8000000,
       "label": "800만",
-      "remaining": 545036,
-      "days": 2,
+      "remaining": 156341,
+      "days": 1,
       "eta": "2026-11-28"
      }
     },
@@ -1018,17 +1023,17 @@
      "released": "2026-11-09",
      "link": "https://www.melon.com/song/detail.htm?songId=603813509",
      "inst": false,
-     "count": 3845484,
-     "prev_count": 3741380,
+     "count": 3947599,
+     "prev_count": 3845484,
      "carried": false,
-     "delta": 104104,
-     "delta_per_day": 104104,
-     "avg_daily": 104104,
+     "delta": 102115,
+     "delta_per_day": 102115,
+     "avg_daily": 103110,
      "next": {
       "target": 4000000,
       "label": "400만",
-      "remaining": 154516,
-      "days": 2,
+      "remaining": 52401,
+      "days": 1,
       "eta": "2026-11-28"
      }
     },
@@ -1039,17 +1044,17 @@
      "released": "2026-11-09",
      "link": "https://www.melon.com/song/detail.htm?songId=603813510",
      "inst": false,
-     "count": 3820052,
-     "prev_count": 3715427,
+     "count": 3922322,
+     "prev_count": 3820052,
      "carried": false,
-     "delta": 104625,
-     "delta_per_day": 104625,
-     "avg_daily": 104625,
+     "delta": 102270,
+     "delta_per_day": 102270,
+     "avg_daily": 103448,
      "next": {
       "target": 4000000,
       "label": "400만",
-      "remaining": 179948,
-      "days": 2,
+      "remaining": 77678,
+      "days": 1,
       "eta": "2026-11-28"
      }
     },
@@ -1060,17 +1065,17 @@
      "released": "2026-11-09",
      "link": "https://www.melon.com/song/detail.htm?songId=603813511",
      "inst": false,
-     "count": 2797996,
-     "prev_count": 2704016,
+     "count": 2890447,
+     "prev_count": 2797996,
      "carried": false,
-     "delta": 93980,
-     "delta_per_day": 93980,
-     "avg_daily": 93980,
+     "delta": 92451,
+     "delta_per_day": 92451,
+     "avg_daily": 93216,
      "next": {
       "target": 3000000,
       "label": "300만",
-      "remaining": 202004,
-      "days": 3,
+      "remaining": 109553,
+      "days": 2,
       "eta": "2026-11-29"
      }
     }
@@ -1078,12 +1083,12 @@
   },
   {
    "name": "고세구 《NO CAT, NO LIFE!》",
-   "total": 12678443,
-   "prev_total": 12597514,
-   "prev_date": "2026-11-25",
+   "total": 12757478,
+   "prev_total": 12678443,
+   "prev_date": "2026-11-26",
    "gap_days": 1,
-   "delta": 80929,
-   "delta_per_day": 80929,
+   "delta": 79035,
+   "delta_per_day": 79035,
    "series": [
     {
      "date": "2026-11-25",
@@ -1094,6 +1099,11 @@
      "date": "2026-11-26",
      "at": "2026-11-26T19:00:33+09:00",
      "total": 12678443
+    },
+    {
+     "date": "2026-11-27",
+     "at": "2026-11-27T18:47:42+09:00",
+     "total": 12757478
     }
    ],
    "summary": {
@@ -1106,26 +1116,26 @@
    },
    "weekly": {
     "start": "2026-11-20",
-    "end": "2026-11-26",
+    "end": "2026-11-27",
     "base_date": "2026-11-25",
-    "complete": false,
+    "complete": true,
     "partial": true,
-    "days": 1,
-    "gain": 80929,
-    "per_day": 80929,
+    "days": 2,
+    "gain": 159964,
+    "per_day": 79982,
     "prev_gain": null,
     "top": [
      {
       "title": "고양이가 세상을 구한다!",
-      "gain": 75776
-     },
-     {
-      "title": "Your Turn",
-      "gain": 2598
+      "gain": 149850
      },
      {
       "title": "PUMP JUMP BUMP",
-      "gain": 2555
+      "gain": 5066
+     },
+     {
+      "title": "Your Turn",
+      "gain": 5048
      }
     ]
    },
@@ -1134,7 +1144,7 @@
     {
      "album": "NO CAT, NO LIFE!",
      "released": "2026-09-28",
-     "total": 12678443,
+     "total": 12757478,
      "inst_total": 0,
      "songs": 3,
      "share": 1.0
@@ -1146,11 +1156,11 @@
     "next": {
      "target": 6000000,
      "label": "600만",
-     "remaining": 797234,
-     "days": 11,
+     "remaining": 723160,
+     "days": 10,
      "eta": "2026-12-07"
     },
-    "count": 5202766
+    "count": 5276840
    },
    "songs": [
     {
@@ -1160,17 +1170,17 @@
      "released": "2026-09-28",
      "link": "https://www.melon.com/song/detail.htm?songId=603093102",
      "inst": false,
-     "count": 5202766,
-     "prev_count": 5126990,
+     "count": 5276840,
+     "prev_count": 5202766,
      "carried": false,
-     "delta": 75776,
-     "delta_per_day": 75776,
-     "avg_daily": 75776,
+     "delta": 74074,
+     "delta_per_day": 74074,
+     "avg_daily": 74925,
      "next": {
       "target": 6000000,
       "label": "600만",
-      "remaining": 797234,
-      "days": 11,
+      "remaining": 723160,
+      "days": 10,
       "eta": "2026-12-07"
      }
     },
@@ -1181,18 +1191,18 @@
      "released": "2026-09-28",
      "link": "https://www.melon.com/song/detail.htm?songId=603093103",
      "inst": false,
-     "count": 3737709,
-     "prev_count": 3735111,
+     "count": 3740159,
+     "prev_count": 3737709,
      "carried": false,
-     "delta": 2598,
-     "delta_per_day": 2598,
-     "avg_daily": 2598,
+     "delta": 2450,
+     "delta_per_day": 2450,
+     "avg_daily": 2524,
      "next": {
       "target": 4000000,
       "label": "400만",
-      "remaining": 262291,
-      "days": 101,
-      "eta": "2027-03-07"
+      "remaining": 259841,
+      "days": 103,
+      "eta": "2027-03-10"
      }
     },
     {
@@ -1202,18 +1212,18 @@
      "released": "2026-09-28",
      "link": "https://www.melon.com/song/detail.htm?songId=603093104",
      "inst": false,
-     "count": 3737968,
-     "prev_count": 3735413,
+     "count": 3740479,
+     "prev_count": 3737968,
      "carried": false,
-     "delta": 2555,
-     "delta_per_day": 2555,
-     "avg_daily": 2555,
+     "delta": 2511,
+     "delta_per_day": 2511,
+     "avg_daily": 2533,
      "next": {
       "target": 4000000,
       "label": "400만",
-      "remaining": 262032,
+      "remaining": 259521,
       "days": 103,
-      "eta": "2027-03-09"
+      "eta": "2027-03-10"
      }
     }
    ]

@@ -521,6 +521,267 @@
      "carried": false
     }
    ]
+  },
+  {
+   "date": "2026-11-27",
+   "input_at": "2026-11-27T18:47:42+09:00",
+   "taken_at": "2026-11-27T18:47:49+09:00",
+   "group_order": [
+    "이세계아이돌",
+    "고세구 《NO CAT, NO LIFE!》"
+   ],
+   "totals": {
+    "이세계아이돌": 638551101,
+    "고세구 《NO CAT, NO LIFE!》": 12757478
+   },
+   "songs": [
+    {
+     "group": "이세계아이돌",
+     "title": "RE : WIND",
+     "count": 64256605,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "RE : WIND (Inst.)",
+     "count": 8400402,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "겨울봄",
+     "count": 50518632,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "겨울봄 (Inst.)",
+     "count": 7554366,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "LOCKDOWN",
+     "count": 52211318,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "LOCKDOWN (Inst.)",
+     "count": 9913720,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Another World",
+     "count": 42398073,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Another World (Inst.)",
+     "count": 8808361,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "KIDDING",
+     "count": 80071630,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "KIDDING (Inst.)",
+     "count": 6202022,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "OVER",
+     "count": 43256962,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Superhero",
+     "count": 42777151,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "OVER (inst.)",
+     "count": 5112932,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Superhero (inst.)",
+     "count": 5067990,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "SYZYGY",
+     "count": 13562496,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "SYZYGY (Inst.)",
+     "count": 1866385,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Misty Rainbow",
+     "count": 19427017,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Misty Rainbow (Inst.)",
+     "count": 1384002,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Stargazers [Stargazers]",
+     "count": 17733990,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "ELEVATE [Stargazers]",
+     "count": 13755203,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "MEMORY [Stargazers]",
+     "count": 13757211,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Stargazers (Inst.)",
+     "count": 733710,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "ELEVATE (Inst.)",
+     "count": 720541,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "MEMORY (Inst.)",
+     "count": 718060,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Be My Light",
+     "count": 23832189,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Nameless",
+     "count": 21625671,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Stargazers [Be My Light]",
+     "count": 10538259,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "ELEVATE [Be My Light]",
+     "count": 8619223,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "MEMORY [Be My Light]",
+     "count": 8144669,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Be My Light (Inst.)",
+     "count": 134357,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Nameless (Inst.)",
+     "count": 133304,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "화이트 (White)",
+     "count": 18028209,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Smile For You",
+     "count": 13525222,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "연애세포 (恋愛細胞)",
+     "count": 5157192,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "REBELS",
+     "count": 7843659,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "BACK 2 THE FUTURE",
+     "count": 3947599,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "ANTI-HERO",
+     "count": 3922322,
+     "carried": false
+    },
+    {
+     "group": "이세계아이돌",
+     "title": "Dream Residue",
+     "count": 2890447,
+     "carried": false
+    },
+    {
+     "group": "고세구 《NO CAT, NO LIFE!》",
+     "title": "고양이가 세상을 구한다!",
+     "count": 5276840,
+     "carried": false
+    },
+    {
+     "group": "고세구 《NO CAT, NO LIFE!》",
+     "title": "Your Turn",
+     "count": 3740159,
+     "carried": false
+    },
+    {
+     "group": "고세구 《NO CAT, NO LIFE!》",
+     "title": "PUMP JUMP BUMP",
+     "count": 3740479,
+     "carried": false
+    }
+   ]
   }
  ]
 }
