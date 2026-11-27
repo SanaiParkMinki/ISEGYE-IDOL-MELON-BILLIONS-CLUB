@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T18:47:49+09:00",
+ "generated_at": "2026-11-27T19:05:52+09:00",
  "confirmed_date": "2026-11-27",
  "basis_at": "2026-11-27T18:47:42+09:00",
  "site_url": "https://sanaiparkminki.github.io/ISEGYE-IDOL-MELON-BILLIONS-CLUB/",
@@ -1228,5 +1228,6 @@
     }
    ]
   }
- ]
+ ],
+ "replaced": true
 }
