@@ -21,6 +21,8 @@ concurrency:
 jobs:
   total:
     runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
       - name: 저장소 내려받기
         uses: actions/checkout@v4
@@ -33,8 +35,6 @@ jobs:
           python-version: "3.12"
 
       - name: 합계 계산
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           INPUT_TIME=$(git log -1 --format=%cI -- data/input.txt)
           echo "input.txt 마지막 수정 시각: $INPUT_TIME"
@@ -54,3 +54,15 @@ jobs:
           git commit -m "📊 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') 누적 합계 갱신"
           git pull --rebase
           git push
+
+      - name: 공유 이미지용 글꼴·도구 준비
+        if: env.DISCORD_WEBHOOK_URL != ''
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji > /dev/null
+          pip install -q playwright
+
+      - name: 디스코드 알림 보내기
+        if: env.DISCORD_WEBHOOK_URL != ''
+        run: python scripts/notify_discord.py
